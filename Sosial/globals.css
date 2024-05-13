@@ -1,0 +1,39 @@
+@import url("https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css");
+@import url("https://fonts.googleapis.com/css?family=Inter:700|Plus+Jakarta+Sans:var(--heading-4-medium-font-weight),var(--heading-4-regular-font-weight),var(--heading-3-medium-font-weight),var(--heading-4-semibold-font-weight),600,700,var(--heading-2-semibold-font-weight),500,var(--body-regular-font-weight),400,var(--body-bold-font-weight)");
+
+* {
+  -webkit-font-smoothing: antialiased;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  overflow-x: hidden;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+button:focus-visible {
+  outline: 2px solid #4a90e2 !important;
+  outline: -webkit-focus-ring-color auto 5px !important;
+}
+
+a {
+  text-decoration: none;
+}
+
+.container {
+  max-width: 100%;
+  width: 100%;
+  margin: auto;
+  padding: 0 20px;
+}
