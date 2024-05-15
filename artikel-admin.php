@@ -329,7 +329,7 @@ function truncate_text($text, $limit) {
                                                       <!-- Form untuk edit artikel -->
                                                       <form id="editArticleForm' . $row['id'] . '" method="post" action="' . htmlspecialchars($_SERVER["PHP_SELF"]) . '" enctype="multipart/form-data">
                                                           <input type="hidden" name="artikel_id" value="' . $row['id'] . '">
-                                                          <div class="frame-4">
+                                                          <div class="frame-modal-4">
                                                             <div class="text-wrapper-2">Kategori</div>
                                                             <div class="field-form-dropdown">
                                                               <select class="form-dropdown" id="kategori" name="kategori" required>
@@ -340,13 +340,13 @@ function truncate_text($text, $limit) {
                                                               <span class="dropdown-icon"></span>
                                                             </div>
                                                           </div>
-                                                          <div class="frame-4">
+                                                          <div class="frame-modal-4">
                                                             <div for="link" class="text-wrapper-2">Link</div>
                                                             <div class="field-form-isi">
                                                             <input type="text" class="form-input" id="link" name="link" value="' . $row['link'] . '" required>
                                                             </div>
                                                           </div>
-                                                          <div class="frame-4">
+                                                          <div class="frame-modal-4">
                                                             <div for="gambar_edit" class="text-wrapper-2">Gambar</div>
                                                             <div class="field-form-isi-2">
                                                                   <div class="me-3">
@@ -357,13 +357,13 @@ function truncate_text($text, $limit) {
                                                                   </div>
                                                               </div>
                                                           </div>
-                                                          <div class="frame-4">
+                                                          <div class="frame-modal-4">
                                                             <div for="judul" class="text-wrapper-2">Judul</div>
                                                             <div class="field-form-isi">
                                                               <input type="text" class="form-input" id="judul" name="judul" value="' . $row['judul'] . '" required>
                                                             </div>
                                                           </div>
-                                                          <div class="frame-4">
+                                                          <div class="frame-modal-4">
                                                           <div for="deskripsi" class="text-wrapper-2">Deskripsi (Minimal 500 kata)</div>
                                                           <div class="field-form-isi">
                                                             <textarea type="text" class="form-input" style="resize: vertical; width: 100%; max-width: 100%; min-width: 100%; min-height: 180px;" id="deskripsi" name="deskripsi"rows="5" required>' . $row['deskripsi'] . '</textarea>

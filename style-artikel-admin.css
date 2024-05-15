@@ -304,6 +304,22 @@
   border-color: var(--stroke);
 }
 
+.artikel .frame-modal-4 {
+  display: flex;
+  align-items: flex-start;
+  gap: 32px;
+  padding: 0px 0px 24px;
+  position: relative;
+  align-self: stretch;
+  width: 100%;
+  flex: 0 0 auto;
+  margin-bottom: 16px;
+  background-color: var(--white);
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+  border-color: var(--stroke);
+}
+
 .artikel .text-wrapper-2 {
   position: relative;
   width: 40%;
@@ -1155,7 +1171,7 @@
   display: block;
   width: 100%;
   padding: 10px 14px;
-  font-size: 20px;
+  font-size: 18px;
   font-weight: 500;
   line-height: 1.5;
   font-family: var(--body-regular-font-family);
@@ -1205,14 +1221,19 @@
 }
 
 .modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center; /* Ensures vertical alignment in the center */
   border-bottom: 1px solid #e5e5e5;
   padding-bottom: 15px;
+  margin-left: 24px;
+  margin-right: 24px;
 }
 
 .btn-close {
   background: transparent;
   border: none;
-  font-size: 20px;
+  font-size: 24px;
   cursor: pointer;
 }
 
