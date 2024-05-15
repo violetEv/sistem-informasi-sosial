@@ -55,7 +55,7 @@
   position: absolute;
   top: 0;
   left: 0;
-  font-family: "Inter", Helvetica;
+  font-family: var(--body-regular-font-family);
   font-weight: 700;
   font-size: 20px;
   letter-spacing: 0;
@@ -74,7 +74,7 @@
   position: absolute;
   top: 0;
   left: 0;
-  font-family: "Inter", Helvetica;
+  font-family: var(--body-regular-font-family);
   font-weight: 700;
   color: var(--blue-1);
   font-size: 20px;
@@ -142,34 +142,10 @@
   position: relative;
 }
 
-/* .artikel .button-1 {
-  all: unset;
-  box-sizing: border-box;
-  padding: 10px 18px;
-  background-color: var(--blue-1);
-  border: 1px solid;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  position: relative;
-  flex: 0 0 auto;
-  border-radius: 1000px;
-  overflow: hidden;
-  box-shadow: var(--shadow-xs);
-  border-color: var(--blue-1);
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-.artikel .button-1:hover {
-  background-color: var(--black);
-} */
-
 .artikel .text-2 {
   position: relative;
   width: fit-content;
-  font-family: var(--body-bold-font-family);
+  font-family: var(--body-regular-font-family);
   font-weight: var(--body-bold-font-weight);
   color: var(--white);
   font-size: var(--body-bold-font-size);
@@ -191,10 +167,10 @@
   width: 100%;
   align-items: center;
   gap: 64px;
-  padding: 160px 140px 100px 140px; /* Atas, Kanan, Bawah, Kiri */
+  padding: 160px 100px 100px 100px; /* Atas, Kanan, Bawah, Kiri */
   position: relative;
   flex: 0 0 auto;
-  background-color: #f4f7fa;
+  background-color: var(--neutral-bg);
   overflow: hidden;
 }
 
@@ -237,7 +213,7 @@
   line-height: var(--heading-2-semibold-line-height);
   position: relative;
   margin-top: -1px;
-  font-family: var(--heading-2-semibold-font-family);
+  font-family: var(--body-regular-font-family);
   letter-spacing: var(--heading-2-semibold-letter-spacing);
   font-style: var(--heading-2-semibold-font-style);
 }
@@ -245,7 +221,7 @@
 .artikel .description {
   position: relative;
   width: 745px;
-  font-family: var(--heading-4-regular-font-family);
+  font-family: var(--body-regular-font-family);
   font-weight: var(--heading-4-regular-font-weight);
   color: var(--gray);
   font-size: var(--heading-4-regular-font-size);
@@ -273,6 +249,7 @@
   flex: 0 0 auto;
 }
 
+.artikel .button-no,
 .artikel .button {
   all: unset;
   box-sizing: border-box;
@@ -297,15 +274,11 @@
   background-color: var(--black); /* Added hover effect */
 }
 
-/* .artikel .button:active {
-  background-color: var(--blue-3);
-} */
-
 .artikel .text-3 {
   position: relative;
   width: fit-content;
   margin-top: -1px;
-  font-family: "Plus Jakarta Sans", Helvetica;
+  font-family: var(--body-regular-font-family);
   font-weight: 700;
   color: var(--white);
   font-size: 18px;
@@ -334,7 +307,7 @@
   position: relative;
   width: fit-content;
   margin-top: -1px;
-  font-family: "Plus Jakarta Sans", Helvetica;
+  font-family: var(--body-regular-font-family);
   font-weight: 700;
   color: var(--gray);
   font-size: 18px;
@@ -419,13 +392,14 @@
   position: relative;
   width: fit-content;
   margin-top: -1px;
-  font-family: "Plus Jakarta Sans", Helvetica;
+  font-family: var(--body-regular-font-family);
   font-weight: 700;
   color: var(--black);
   font-size: 12px;
   letter-spacing: 0;
   line-height: 18px;
   white-space: nowrap;
+  text-transform: uppercase;
 }
 
 .artikel .text-wrapper-2 {
@@ -437,7 +411,7 @@
   white-space: nowrap;
   position: relative;
   margin-top: -1px;
-  font-family: "Plus Jakarta Sans", Helvetica;
+  font-family: var(--body-regular-font-family);
   letter-spacing: 0;
 }
 
@@ -462,7 +436,7 @@
   line-height: 32px;
   position: relative;
   margin-top: -1px;
-  font-family: "Plus Jakarta Sans", Helvetica;
+  font-family: var(--body-regular-font-family);
   letter-spacing: 0;
   display: -webkit-box;
   -webkit-line-clamp: 2;
@@ -473,7 +447,7 @@
 .artikel .p {
   position: relative;
   width: 310px;
-  font-family: "Plus Jakarta Sans", Helvetica;
+  font-family: var(--body-regular-font-family);
   font-weight: 400;
   color: var(--gray);
   font-size: 16px;
@@ -488,7 +462,7 @@
 .artikel .link-detail {
   position: relative;
   align-self: stretch;
-  font-family: "Plus Jakarta Sans", Helvetica;
+  font-family: var(--body-regular-font-family);
   font-weight: 700;
   color: var(--blue-1);
   font-size: 18px;
@@ -505,7 +479,7 @@
   width: 100%;
   align-items: flex-start;
   gap: 72px;
-  padding: 64px 140px;
+  padding: 64px 100px;
   position: relative;
   flex: 0 0 auto;
   background-color: var(--blue-1);
@@ -528,16 +502,16 @@
   padding: 8px;
   position: relative;
   flex: 0 0 auto;
-  background-color: #ffffff;
+  background-color: var(--white);
   border-radius: 8px;
 }
 
 .artikel .text-5 {
-  color: #192644;
+  color: var(--logo-1);
   position: absolute;
   top: 0;
   left: 0;
-  font-family: "Inter", Helvetica;
+  font-family: var(--body-regular-font-family);
   font-weight: 700;
   font-size: 20px;
   letter-spacing: 0;
@@ -572,7 +546,7 @@
   white-space: nowrap;
   position: relative;
   margin-top: -1px;
-  font-family: "Plus Jakarta Sans", Helvetica;
+  font-family: var(--body-regular-font-family);
   letter-spacing: 0;
 }
 
@@ -591,7 +565,7 @@
   position: relative;
   align-self: stretch;
   margin-top: -1px;
-  font-family: "Plus Jakarta Sans", Helvetica;
+  font-family: var(--body-regular-font-family);
   font-weight: 500;
   color: var(--white);
   font-size: 16px;
@@ -602,7 +576,7 @@
 .artikel .item-3 {
   position: relative;
   align-self: stretch;
-  font-family: "Plus Jakarta Sans", Helvetica;
+  font-family: var(--body-regular-font-family);
   font-weight: 500;
   color: var(--white);
   font-size: 16px;
@@ -638,7 +612,7 @@
   position: relative;
   width: fit-content;
   margin-top: -1px;
-  font-family: "Plus Jakarta Sans", Helvetica;
+  font-family: var(--body-regular-font-family);
   font-weight: 400;
   color: var(--stroke);
   font-size: 16px;
@@ -695,14 +669,14 @@
 }
 
 .artikel .dropdown-menu li a {
-  color: #000;
+  color: var(--black);
   padding: 12px 16px;
   text-decoration: none;
   display: block;
 }
 
 .artikel .dropdown-menu li a:hover {
-  background-color: #f2f2f2;
+  background-color: var(--stroke);
 }
 
 /* Style untuk label layanan */
@@ -714,7 +688,7 @@
 .artikel .menu-dropdown {
   display: none;
   position: absolute;
-  background-color: #fff;
+  background-color:var(--white);
   min-width: 160px;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   z-index: 1;
@@ -725,14 +699,14 @@
 }
 
 .artikel .menu-dropdown li a {
-  color: #000;
+  color: var(--black);
   padding: 12px 16px;
   text-decoration: none;
   display: block;
 }
 
 .artikel .menu-dropdown li a:hover {
-  background-color: #f2f2f2;
+  background-color: var(--stroke);
 }
 
 /* --- */

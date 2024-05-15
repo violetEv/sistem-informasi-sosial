@@ -104,7 +104,7 @@ if (!isset($_SESSION['username'])) {
               <img class="img" src="img/vuesax-outline-edit-1.svg" />
               <div class="div-4">
                 <div class="heading-3">Laporkan Aduan</div>
-                <p class="p">Laporkan keresahanmu dan sertakan bukti, dapatkan respon cepat.</p>
+                <p class="p">Laporkan keresahanmu dan sertakan bukti, kemudian dapatkan respon cepat.</p>
               </div>
               <button class="button"><a href="pengguna/pengaduan.php" class="text-4">Tambah</a></button>
             </div>
@@ -145,12 +145,12 @@ if (!isset($_SESSION['username'])) {
           </p>
           <div class="frame-3">
             <?php if ($_SESSION['level'] == 'petugas') { ?>
-              <button class="button"><a href="form-artikel.php" class="text-4">Kelola Informasi</a></button>
+              <button class="button"><a href="artikel-admin.php" class="text-4">Kelola Informasi</a></button>
             <?php } ?>
             <?php if ($_SESSION['level'] == 'warga') { ?>
               <button class="button"><div class="text-4">Jelajahi Informasi</div></button>
             <?php } ?>
-            <button class="button-3"><div class="text-5">Lihat Semua</div></button>
+            <a href="<?php echo ($_SESSION['level'] == 'petugas') ? 'artikel-admin.php#lihat-artikel' : 'artikel-user.php'; ?>" class="button-3"><div class="text-5">Lihat Semua</div></a>
           </div>
         </div>
         <div class="frame-4">

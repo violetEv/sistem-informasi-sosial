@@ -55,7 +55,7 @@
   position: absolute;
   top: 0;
   left: 0;
-  font-family: "Inter", Helvetica;
+  font-family: var(--body-regular-font-family);
   font-weight: 700;
   font-size: 20px;
   letter-spacing: 0;
@@ -74,7 +74,7 @@
   position: absolute;
   top: 0;
   left: 0;
-  font-family: "Inter", Helvetica;
+  font-family: var(--body-regular-font-family);
   font-weight: 700;
   color: var(--blue-1);
   font-size: 20px;
@@ -142,6 +142,7 @@
   position: relative;
 }
 
+.artikel .button-no,
 .artikel .button {
   all: unset;
   box-sizing: border-box;
@@ -219,7 +220,7 @@
   width: 100%;
   align-items: center;
   gap: 64px;
-  padding: 0px 140px;
+  padding: 0px 100px;
   position: relative;
   flex: 0 0 auto;
 }
@@ -307,10 +308,10 @@
   position: relative;
   width: 40%;
   margin-top: -1px;
-  font-family: "Plus Jakarta Sans", Helvetica;
+  font-family: var(--body-regular-font-family);
   font-weight: 500;
   color: var(--black);
-  font-size: 20px;
+  font-size: 18px;
   letter-spacing: 0;
   line-height: 27px;
 }
@@ -333,7 +334,7 @@
   position: relative;
   width: fit-content;
   margin-top: -1.5px;
-  font-family: "Plus Jakarta Sans", Helvetica;
+  font-family: var(--body-regular-font-family);
   font-weight: 500;
   color: var(--gray);
   font-size: 20px;
@@ -364,7 +365,7 @@
 }
 
 .artikel .field-up {
-  width: 545px;
+  width: 56%;
   align-items: flex-start;
   display: flex;
   position: relative;
@@ -429,7 +430,7 @@
   width: 100%;
   align-items: flex-start;
   gap: 64px;
-  padding: 100px 140px;
+  padding: 100px 100px;
   position: relative;
   flex: 0 0 auto;
   background-color: var(--white);
@@ -450,7 +451,7 @@
   align-self: stretch;
   font-weight: var(--heading-2-semibold-font-weight);
   color: var(--black);
-  font-size: var(--heading-2-semibold-font-size);
+  font-size: var(--heading-2-semibold-font-size-2);
   line-height: var(--heading-2-semibold-line-height);
   position: relative;
   margin-top: -1px;
@@ -500,7 +501,7 @@
   position: relative;
   width: fit-content;
   margin-top: -1px;
-  font-family: "Plus Jakarta Sans", Helvetica;
+  font-family: var(--body-regular-font-family);
   font-weight: 700;
   color: var(--white);
   font-size: 18px;
@@ -529,7 +530,7 @@
   position: relative;
   width: fit-content;
   margin-top: -1px;
-  font-family: "Plus Jakarta Sans", Helvetica;
+  font-family: var(--body-regular-font-family);
   font-weight: 700;
   color: var(--gray);
   font-size: 18px;
@@ -614,13 +615,14 @@
   position: relative;
   width: fit-content;
   margin-top: -1px;
-  font-family: "Plus Jakarta Sans", Helvetica;
+  font-family: var(--body-regular-font-family);
   font-weight: 700;
   color: var(--black);
   font-size: 12px;
   letter-spacing: 0;
   line-height: 18px;
   white-space: nowrap;
+  text-transform: uppercase;
 }
 
 .artikel .text-wrapper-3 {
@@ -632,7 +634,7 @@
   white-space: nowrap;
   position: relative;
   margin-top: -1px;
-  font-family: "Plus Jakarta Sans", Helvetica;
+  font-family: var(--body-regular-font-family);
   letter-spacing: 0;
 }
 
@@ -657,7 +659,7 @@
   line-height: 32px;
   position: relative;
   margin-top: -1px;
-  font-family: "Plus Jakarta Sans", Helvetica;
+  font-family: var(--body-regular-font-family);
   letter-spacing: 0;
   display: -webkit-box;
   -webkit-line-clamp: 2;
@@ -668,7 +670,7 @@
 .artikel .text-wrapper-4 {
   position: relative;
   width: 310px;
-  font-family: "Plus Jakarta Sans", Helvetica;
+  font-family: var(--body-regular-font-family);
   font-weight: 400;
   color: var(--gray);
   font-size: 16px;
@@ -683,7 +685,7 @@
 .artikel .link-detail {
   position: relative;
   align-self: stretch;
-  font-family: "Plus Jakarta Sans", Helvetica;
+  font-family: var(--body-regular-font-family);
   font-weight: 700;
   color: var(--blue-1);
   font-size: 18px;
@@ -730,7 +732,7 @@
   width: 100%;
   align-items: flex-start;
   gap: 72px;
-  padding: 64px 140px;
+  padding: 64px 100px;
   position: relative;
   flex: 0 0 auto;
   background-color: var(--blue-1);
@@ -753,16 +755,16 @@
   padding: 8px;
   position: relative;
   flex: 0 0 auto;
-  background-color: #ffffff;
+  background-color:var(--white);
   border-radius: 8px;
 }
 
 .artikel .text-7 {
-  color: #192644;
+  color: var(--logo-1);
   position: absolute;
   top: 0;
   left: 0;
-  font-family: "Inter", Helvetica;
+  font-family: var(--body-regular-font-family);
   font-weight: 700;
   font-size: 20px;
   letter-spacing: 0;
@@ -797,7 +799,7 @@
   white-space: nowrap;
   position: relative;
   margin-top: -1px;
-  font-family: "Plus Jakarta Sans", Helvetica;
+  font-family: var(--body-regular-font-family);
   letter-spacing: 0;
 }
 
@@ -805,7 +807,7 @@
   position: relative;
   align-self: stretch;
   margin-top: -1px;
-  font-family: "Plus Jakarta Sans", Helvetica;
+  font-family: var(--body-regular-font-family);
   font-weight: 500;
   color: var(--white);
   font-size: 16px;
@@ -816,7 +818,7 @@
 .artikel .item-3 {
   position: relative;
   align-self: stretch;
-  font-family: "Plus Jakarta Sans", Helvetica;
+  font-family: var(--body-regular-font-family);
   font-weight: 500;
   color: var(--white);
   font-size: 16px;
@@ -852,7 +854,7 @@
   position: relative;
   width: fit-content;
   margin-top: -1px;
-  font-family: "Plus Jakarta Sans", Helvetica;
+  font-family: var(--body-regular-font-family);
   font-weight: 400;
   color: var(--stroke);
   font-size: 16px;
@@ -888,10 +890,10 @@
   width: 100%;
   align-items: center;
   gap: 64px;
-  padding: 160px 140px 100px 140px; /* Atas, Kanan, Bawah, Kiri */
+  padding: 160px 100px 100px 100px; /* Atas, Kanan, Bawah, Kiri */
   position: relative;
   flex: 0 0 auto;
-  background-color: #f4f7fa;
+  background-color: var(--neutral-bg);
   overflow: hidden;
 }
 
@@ -907,45 +909,12 @@
   border-radius: 8px;
   width: 56%;
 }
-  
-
-.artikel .form-input {
-  padding: 10px 14px;
-  border: none;
-  outline: none;
-  border-radius: 8px;
-  font-family: "Plus Jakarta Sans", Helvetica;
-  font-weight: 500;
-  color: var(--black);
-  font-size: 20px;
-  letter-spacing: 0;
-  line-height: 27px;
-}
 
 .artikel .form-input::placeholder {
   color: var(--gray); /* Warna hint teks */
 }
 
 /* ------ */
-
-.artikel .form-dropdown {
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  padding: 10px 14px;
-  border: none;
-  outline: none;
-  border-radius: 8px;
-  font-family: "Plus Jakarta Sans", Helvetica;
-  font-weight: 500;
-  color: var(--black);
-  font-size: 20px;
-  letter-spacing: 0;
-  line-height: 27px;
-  width: 100%;
-  background: transparent;
-}
-
 .artikel .field-form-dropdown {
   position: relative;
   display: flex;
@@ -971,13 +940,13 @@
 
 /* ---- */
 
-.artikel .field-up {
+/* .artikel .field-up {
   width: 545px;
   align-items: flex-start;
   display: flex;
   position: relative;
   width: 56%;
-}
+} */
 
 .artikel .smithy-weber-wrapper {
   display: inline-flex;
@@ -999,6 +968,7 @@
   padding: 10px 14px;
   position: relative;
   flex: 1;
+  height: 100%;
   flex-grow: 1;
   border-radius: 0px 8px 8px 0px;
   border: 1.5px solid;
@@ -1017,9 +987,10 @@
 .artikel .file-label {
   cursor: pointer;
   color: var(--gray);
-  font-family: "Plus Jakarta Sans", Helvetica;
+  font-family: var(--body-regular-font-family);
   font-weight: 500;
   font-size: 20px;
+  height: auto;
 }
 
 .artikel .file-label::after {
@@ -1110,14 +1081,14 @@
 }
 
 .artikel .dropdown-menu li a {
-  color: #000;
+  color: var(--black);
   padding: 12px 16px;
   text-decoration: none;
   display: block;
 }
 
 .artikel .dropdown-menu li a:hover {
-  background-color: #f2f2f2;
+  background-color: var(--stroke);
 }
 
 /* Style untuk label layanan */
@@ -1129,7 +1100,7 @@
 .artikel .menu-dropdown {
   display: none;
   position: absolute;
-  background-color: #fff;
+  background-color: var(--white);
   min-width: 160px;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   z-index: 1;
@@ -1140,13 +1111,131 @@
 }
 
 .artikel .menu-dropdown li a {
-  color: #000;
+  color: var(--black);
   padding: 12px 16px;
   text-decoration: none;
   display: block;
 }
 
 .artikel .menu-dropdown li a:hover {
-  background-color: #f2f2f2;
+  background-color: var(--stroke);
 }
 
+/* ------ */
+
+.artikel .form-isi {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+  position: relative;
+  flex: 0 0 auto;
+  background-color: var(--neutral-bg);
+  overflow: hidden;
+}
+
+/* ----- */
+.artikel .form-input, .artikel .form-dropdown{
+  padding: 10px 14px;
+  border: none;
+  outline: none;
+  border-radius: 8px;
+  font-family: var(--body-regular-font-family);
+  font-weight: 500;
+  color: var(--black);
+  font-size: 18px;
+  letter-spacing: 0;
+  line-height: 27px;
+  -webkit-appearance: none; /* Remove default styling for dropdowns in Safari */
+  -moz-appearance: none;    /* Remove default styling for dropdowns in Firefox */
+  appearance: none;         /* Remove default styling for dropdowns in other browsers */
+}
+
+.form-control2 {
+  display: block;
+  width: 100%;
+  padding: 10px 14px;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 1.5;
+  font-family: var(--body-regular-font-family);
+  background-clip: padding-box;
+  border: 1.5px solid;
+  border-color: var(--stroke);
+  border-radius: 8px;
+  transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+
+.artikel .form-input2{
+  border: none;
+  outline: none;
+  border-radius: 8px;
+  font-family: var(--body-regular-font-family);
+  font-weight: 500;
+  color: var(--black);
+  font-size: 20px;
+  letter-spacing: 0;
+}
+                                          
+                                          
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgb(0,0,0);
+  background-color: rgba(0,0,0,0.4);
+  padding-top: 60px;
+}
+
+.modal-content {
+  background-color: var(--white);
+  border-radius: 8px;
+  padding: 20px;
+  border: 1px solid;
+  border-color: var(--stroke);
+  box-shadow: 7px 8px 54px #4921ff12;
+  max-width: 70%;
+  margin: 5% auto;
+  margin-top: 2%;
+}
+
+.modal-header {
+  border-bottom: 1px solid #e5e5e5;
+  padding-bottom: 15px;
+}
+
+.btn-close {
+  background: transparent;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.modal-body {
+  padding: 20px;
+}
+
+.img-thumbnail {
+  max-width: 180px;
+  max-height: 130px;
+  border-radius: 8px;
+  margin-right: 10px;
+}
+.d-grid {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.artikel .field-form-isi-2 {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  border-radius: 8px;
+  width: 56%;
+}

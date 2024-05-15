@@ -75,7 +75,7 @@ if (!isset($_SESSION['username'])) {
         </div>
         <div class="frame-3">
           <div class="category">
-            <button type="button" data-category="bansos" onclick="changeCategory('bansos')" class="button"><div class="text-3">Bantuan Sosial</div></button>
+            <button type="button" data-category="bansos" onclick="changeCategory('bansos')" class="button-no"><div class="text-3">Bantuan Sosial</div></button>
             <button type="button" data-category="Keamanan" onclick="changeCategory('Keamanan')" class="button-4"><div class="text-4">Keamanan</div></button>
           </div>
             <div class="frame-wrapper">
@@ -139,10 +139,10 @@ if (!isset($_SESSION['username'])) {
                       $('.category button').each(function() {
                         var buttonCategory = $(this).data('category');
                         if (buttonCategory === category) {
-                          $(this).removeClass('button-4').addClass('button');
+                          $(this).removeClass('button-4').addClass('button-no');
                           $(this).find('.text-4').removeClass('text-4').addClass('text-3');
                         } else {
-                          $(this).removeClass('button').addClass('button-4');
+                          $(this).removeClass('button-no').addClass('button-4');
                           $(this).find('.text-3').removeClass('text-3').addClass('text-4');
                         }
                       });
