@@ -65,7 +65,13 @@ if (!isset($_SESSION['username'])) {
         </div>
       </nav>
 
-      <div></div>
+      <div class="frame-2-1">
+        <div class="BG-wrapper"><img class="BG" src="img/bg.png" /></div>
+        <div class="paragraph-container">
+          <p class="heading">Feedback Platform<br />SosialNet</p>
+          <p class="description">Berikan feedback mengenai pengalaman Anda dengan layanan kami, sehingga kami dapat terus memperbaiki dan menyempurnakan kinerja kami di masa depan!</p>
+        </div>
+      </div>
 
       
       <footer class="footer">
