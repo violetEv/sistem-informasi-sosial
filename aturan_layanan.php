@@ -13,10 +13,10 @@ if (!isset($_SESSION['username'])) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kepengurusan</title>
+    <title>Aturan Layanan</title>
     <link rel="stylesheet" href="globals.css" />
     <link rel="stylesheet" href="styleguide.css" />
-    <link rel="stylesheet" href="style-kepengurusan.css" />
+    <link rel="stylesheet" href="style-aturan-layanan.css" />
 </head>
 <body>
     <div class="kepengurusan">
@@ -68,8 +68,8 @@ if (!isset($_SESSION['username'])) {
       <div class="frame-2-1">
         <div class="BG-wrapper"><img class="BG" src="img/bg.png" /></div>
         <div class="paragraph-container">
-          <p class="heading">Staff Pelayanan <br />Masyarakat</p>
-          <p class="description">Bertanggung jawab dalam mengoperasikan dan memfasilitasi sistem untuk memberikan layanan yang cepat dan efisien kepada masyarakat.</p>
+          <p class="heading">Aturan Pelayanan <br />SosialNet</p>
+          <p class="description">Panduan yang mengatur prosedur pengaduan dan layanan administrasi yang memastikan keteraturan dan pemahaman yang jelas.</p>
         </div>
       </div>
 
