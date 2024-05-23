@@ -109,6 +109,7 @@
     position: relative;
     width: fit-content;
     margin-top: -1px;
+    text-decoration: none;
     font-family: var(--body-regular-font-family);
     font-weight: var(--body-regular-font-weight);
     font-size: var(--body-regular-font-size);
@@ -123,6 +124,7 @@
     position: relative;
     width: fit-content;
     margin-top: -1px;
+    text-decoration: none;
     font-family: var(--body-regular-font-family);
     font-weight: var(--body-regular-font-weight);
     font-size: var(--body-regular-font-size);
@@ -322,6 +324,26 @@
   
   .aturan-layanan .text-wrapper-2 {
     position: relative;
+    margin-top: -1px;
+    color: var(--neutraltext-secondary);
+    position: relative;
+    align-self: stretch;
+    text-align: left;
+    padding-left: 18px;
+    padding-top: 24px;
+    padding-right: 18px;
+    padding-bottom: 24px;
+
+    font-family: var(--heading-4-regular-font-family);
+    font-weight: var(--heading-4-medium-font-weight);
+    font-size: var(  --heading-4-semibold-font-size);
+    letter-spacing: var(--heading-4-regular-letter-spacing);
+    line-height: var(--heading-4-regular-line-height);
+    font-style: var(--heading-4-regular-font-style);
+  }
+
+  .aturan-layanan .text-wrapper-3 {
+    position: relative;
     width: 40%;
     margin-top: -1px;
     font-family: var(--body-regular-font-family);
@@ -331,7 +353,7 @@
     letter-spacing: 0;
     line-height: 27px;
   }
-  
+
   .aturan-layanan .field-form {
     align-items: center;
     background-color: var(--stroke);
@@ -639,19 +661,6 @@
     line-height: 18px;
     white-space: nowrap;
     text-transform: uppercase;
-  }
-  
-  .aturan-layanan .text-wrapper-3 {
-    width: fit-content;
-    font-weight: 500;
-    color: var(--gray-2);
-    font-size: 12px;
-    line-height: 18px;
-    white-space: nowrap;
-    position: relative;
-    margin-top: -1px;
-    font-family: var(--body-regular-font-family);
-    letter-spacing: 0;
   }
   
   .aturan-layanan .frame-14 {

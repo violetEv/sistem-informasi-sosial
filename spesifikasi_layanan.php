@@ -6,6 +6,49 @@ if (!isset($_SESSION['username'])) {
   header("Location: index.php");
   exit;
 }
+
+$kode = isset($_GET['id']) ? $_GET['id'] : null;
+$nama = isset($_SESSION['nama']) ? $_SESSION['nama'] : null;
+$jenis = isset($_POST['jenis']) ? $_POST['jenis'] : null;
+$layanan = isset($_POST['spesifikasi']) ? $_POST['spesifikasi'] : null;
+
+
+if (isset($_POST['simpan'])) {
+  if (empty($jenis && $layanan) != true) {
+    $sql = "INSERT INTO layanan (jenis, spesifikasi)
+           values ('" . $jenis . "','" . $layanan . "')";
+    $a = $koneksi->query($sql);
+    if ($a === true) {
+      echo "<script>alert('Berhasil Mengirim Spesifikasi Layanan!');</script>";
+      header("refresh:2;url=layanan.php");
+      // echo "<script>location('layanan.php?status=sukses');</script>";
+    } else {
+      echo "<script>alert('Gagal Menginput Spesifikasi Layanan!');</script>";
+      // echo "<script>location('layanan.php?status=gagal');</script>";
+      header("refresh:2;url=administrasi.php");
+    }
+  } else {
+    echo "<script>alert('Ada Input yang Kosong!');</script>";
+    // echo "<script>location('layanan.php?status=gagal');</script>";
+    header("refresh:2;url=layanan.php");
+  }
+} else {
+  //  echo "<script>alert('Gagal Mengirim Pengaduan!');</script>";
+  echo "<script>location('layanan.php');</script>";
+}
+
+// tombol edit tabel
+if (isset($_GET['hal'])) {
+  if ($_GET['hal'] == "hapus") {
+    $hapus = mysqli_query($koneksi, "DELETE FROM layanan WHERE id='$_GET[id]'");
+    if ($hapus) {
+      echo "<script>
+          alert('Hapus Data Sukses!');
+          location='layanan.php';
+          </script>";
+    }
+  }
+}
 ?>
 
 <!DOCTYPE html>
@@ -14,10 +57,13 @@ if (!isset($_SESSION['username'])) {
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <title>Spesifikasi Layanan</title>
   <link rel="stylesheet" href="globals.css" />
   <link rel="stylesheet" href="styleguide.css" />
   <link rel="stylesheet" href="style-spesifikasi-layanan.css" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
 </head>
 
 <body>
@@ -77,8 +123,73 @@ if (!isset($_SESSION['username'])) {
         <p class="heading">Spesifikasi Pelayanan <br />SosialNet</p>
         <p class="description">Jenis layanan masyarakat yang memfasilitasi untuk menyampaikan aspirasi dan permintaan, serta memberikan layanan dengan efisien.</p>
       </div>
-    </div>
 
+      <?php if ($_SESSION['level'] == 'petugas') { ?>
+        <form class="form-isi" id="layananForm" method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" enctype="multipart/form-data">
+          <div class="frame-3">
+
+            <div class="div-2">
+              <div class="frame-4">
+                <div class="text-wrapper-3">Jenis Layanan</div>
+                <div class="field-form-dropdown">
+                  <select class="form-dropdown" id="kategori" name="kategori" required>
+                    <option value="" disabled selected>Pilih jenis layanan</option>
+                    <option name="jenis" value="Pengaduan">Pengaduan</option>
+                    <option name="jenis" value="Administrasi">Administrasi</option>
+                  </select>
+                  <span class="dropdown-icon"></span>
+                </div>
+              </div>
+              <div class="frame-4">
+                <div class="text-wrapper-3">Spesifikasi Layanan</div>
+                <div class="field-form-isi">
+                  <input type="text" class="form-input" name="spesifikasi">
+                </div>
+              </div>
+              <div class=" frame-7">
+                <button type="submit" name="simpan" class="button" onclick="return validateForm()">
+                  <div class="text-3">Simpan</div>
+                </button>
+                <button class="button-2" type="button" id="resetButton" type="reset" name="reset"><span class="text-4">Reset</span></button>
+              </div>
+            </div>
+          </div>
+        </form>
+      <?php } ?>
+
+
+
+      <div class="heading-2">Daftar Layanan</div>
+      <div class="frame-3">
+        <div class="wrapper-table" style="width: 100%;">
+          <table class="table">
+            <tr class="text-wrapper-2" style="background-color: var(  --stroke);">
+              <th class="text-wrapper-2">No.</th>
+              <th class="text-wrapper-2">Jenis Pengaduan</th>
+              <th class="text-wrapper-2">Spesifikasi Layanan</th>
+              <?php if ($_SESSION['level'] == 'petugas') { ?>
+                <th class="text-wrapper-2">Aksi</th>
+              <?php } ?>
+            </tr>
+            <?php
+            $no = 1;
+            $a = mysqli_query($koneksi, "SELECT * FROM layanan");
+            while ($tampil = mysqli_fetch_array($a)) : ?>
+              <tr class="text-wrapper-2">
+                <td class="text-wrapper-2"><?= $no++ ?></td>
+                <td class="text-wrapper-2"><?= $tampil['jenis'] ?></td>
+                <td class="text-wrapper-2"><?= $tampil['spesifikasi'] ?></td>
+                <?php if ($_SESSION['level'] == 'petugas') { ?>
+                  <td class="text-wrapper-2">
+                    <a href="layanan.php?hal=hapus&id=<?= $tampil['id'] ?>" onclick="return confirm('Apakah yakin ingin menghapus data ini?')" class="btn btn-danger">Hapus</a>
+                  </td>
+                <?php } ?>
+              </tr>
+            <?php endwhile; ?>
+          </table>
+        </div>
+      </div>
+    </div>
 
     <footer class="footer">
       <div class="frame-16">

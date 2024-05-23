@@ -112,6 +112,7 @@ if (isset($_GET['hal'])) {
         .aturan {
             width: 90%;
         }
+
         button {
             background-color: #2d2d44;
             color: white;
@@ -138,8 +139,6 @@ if (isset($_GET['hal'])) {
         .form-peng {
             background-color: #ECE5C7;
         }
-
-
     </style>
 </head>
 
@@ -160,12 +159,12 @@ if (isset($_GET['hal'])) {
                         <a class="nav-link active" href="#" aria-current="page">Layanan</a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                             <li><a class="dropdown-item" href="../petugas/aturan_layanan.php">
-                                <?php if ($_SESSION['level'] == 'petugas') { ?>
-                                    Input Aturan Layanan
-                                <?php } else {?>
-                                    Aturan Layanan
-                                <?php }?>
-                            </a></li>
+                                    <?php if ($_SESSION['level'] == 'petugas') { ?>
+                                        Input Aturan Layanan
+                                    <?php } else { ?>
+                                        Aturan Layanan
+                                    <?php } ?>
+                                </a></li>
                             <li><a class="dropdown-item" href="../petugas/layanan.php">Spesifikasi Layanan</a></li>
                         </ul>
                     </li>
@@ -179,7 +178,7 @@ if (isset($_GET['hal'])) {
                         <a class="nav-link" href="../pengguna/feedback.php">Feedback</a>
                     </li>
                 </ul>
-                
+
                 <span class="navbar-profile">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item dropdown">
@@ -196,7 +195,7 @@ if (isset($_GET['hal'])) {
             </div>
         </div>
     </nav>
-    
+
     <h1>Syarat dan Ketentuan Terkait Pelayanan Pada <STRong>SILADU</STRong> </h1>
     <div class="container-fluid aturan">
         <?php
@@ -250,45 +249,46 @@ if (isset($_GET['hal'])) {
                 </div>
             </div>
         <?php } ?>
+
         <div class="card-wrap mt-4">
             <!-- <div class="card tabel-form"> -->
-                <!-- <div class="card-header"> -->
-                    <h3 class="card-title text-center">Daftar Persyaratan dan Format Data Pendukung</h3>
-                <!-- </div> -->
-                <div class="card-body">
-                    <table class="table table-bordered table-striped" >
-                        <tr class="text-center">
-                            <th>No.</th>
-                            <th>Pelayanan</th>
-                            <th>Spesifikasi</th>
-                            <th>S&K</th>
-                            <th>Format Pendukung</th>
-                            <?php if ($_SESSION['level'] == 'petugas') {?>
+            <!-- <div class="card-header"> -->
+            <h3 class="card-title text-center">Daftar Persyaratan dan Format Data Pendukung</h3>
+            <!-- </div> -->
+            <div class="card-body">
+                <table class="table table-bordered table-striped">
+                    <tr class="text-center">
+                        <th>No.</th>
+                        <th>Pelayanan</th>
+                        <th>Spesifikasi</th>
+                        <th>S&K</th>
+                        <th>Format Pendukung</th>
+                        <?php if ($_SESSION['level'] == 'petugas') { ?>
                             <th>Aksi</th>
-                            <?php } ?>
-                        </tr>
-                        <?php
-                        $no = 1;
-                        $a = mysqli_query($koneksi, "SELECT aturan_layanan.id,layanan.jenis,spesifikasi,aturan,template_data FROM aturan_layanan
+                        <?php } ?>
+                    </tr>
+                    <?php
+                    $no = 1;
+                    $a = mysqli_query($koneksi, "SELECT aturan_layanan.id,layanan.jenis,spesifikasi,aturan,template_data FROM aturan_layanan
                                                 INNER JOIN layanan ON aturan_layanan.id_layanan=layanan.id");
-                        while ($tampil = mysqli_fetch_array($a)) : ?>
-                            <tr>
-                                <td><?= $no++ ?></td>
-                                <td><?= $tampil['jenis'] ?></td>
-                                <td><?= $tampil['spesifikasi'] ?></td>
-                                <td><?= $tampil['aturan'] ?></td>
-                                <td><a href="downloadfile.php?url=<?= $tampil['template_data']; ?>"><?php echo $tampil['template_data']; ?></a></td>
-                                <!-- <td><?= $tampil['template_data'] ?></td> -->
-                                <?php if ($_SESSION['level'] == 'petugas') {?>
+                    while ($tampil = mysqli_fetch_array($a)) : ?>
+                        <tr>
+                            <td><?= $no++ ?></td>
+                            <td><?= $tampil['jenis'] ?></td>
+                            <td><?= $tampil['spesifikasi'] ?></td>
+                            <td><?= $tampil['aturan'] ?></td>
+                            <td><a href="downloadfile.php?url=<?= $tampil['template_data']; ?>"><?php echo $tampil['template_data']; ?></a></td>
+                            <!-- <td><?= $tampil['template_data'] ?></td> -->
+                            <?php if ($_SESSION['level'] == 'petugas') { ?>
                                 <td class="text-center">
                                     <a href="aturan_layanan.php?hal=edit&id=<?= $tampil['id'] ?>" class="btn btn-warning"><i class="fa-solid fa-pen-to-square"></i></a>
                                     <a href="aturan_layanan.php?hal=hapus&id=<?= $tampil['id'] ?>" onclick="return confirm('Apakah yakin ingin menghapus data ini?')" name="hapus" class="btn btn-danger"><i class="fa-solid fa-trash"></i></a>
                                 </td>
-                                <?php } ?>
-                            </tr>
-                        <?php endwhile; ?>
-                    </table>
-                </div>
+                            <?php } ?>
+                        </tr>
+                    <?php endwhile; ?>
+                </table>
+            </div>
             <!-- </div> -->
         </div>
         <!-- <? ?> -->

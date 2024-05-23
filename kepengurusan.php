@@ -40,7 +40,7 @@ if (!isset($_SESSION['username'])) {
           <a class="label" href="#">Layanan</a>
           <ul class="dropdown-menu">
             <li>
-              <a class="label" href="petugas/aturan_layanan.php">
+              <a class="label" href="aturan_layanan.php">
                 <?php if ($_SESSION['level'] == 'petugas') { ?>
                   Input Aturan Layanan
                 <?php } else { ?>
@@ -48,7 +48,7 @@ if (!isset($_SESSION['username'])) {
                 <?php } ?>
               </a>
             </li>
-            <li><a class="label" href="petugas/layanan.php">Spesifikasi Layanan</a></li>
+            <li><a class="label" href="spesifikasi_layanan.php">Spesifikasi Layanan</a></li>
           </ul>
         </li>
 
