@@ -86,7 +86,7 @@ if (isset($_GET['hal'])) {
           <a class="label" href="#">Layanan</a>
           <ul class="dropdown-menu">
             <li>
-              <a class="label" href="petugas/aturan_layanan.php">
+              <a class="label" href="aturan_layanan.php">
                 <?php if ($_SESSION['level'] == 'petugas') { ?>
                   Input Aturan Layanan
                 <?php } else { ?>
@@ -94,14 +94,14 @@ if (isset($_GET['hal'])) {
                 <?php } ?>
               </a>
             </li>
-            <li><a class="label" href="petugas/layanan.php">Spesifikasi Layanan</a></li>
+            <li><a class="label" href="spesifikasi_layanan.php">Spesifikasi Layanan</a></li>
           </ul>
         </li>
 
         <li class="item"><a class="label" href="#">Informasi</a></li>
         <li class="item"><a class="label" href="petugas/kepengurusan/staff.php">Kepengurusan</a></li>
         <li class="item"><a class="label" href="#tentang">Tentang</a></li>
-        <li class="item"><a class="label" href="pengguna/feedback.php">Feedback</a></li>
+        <li class="item"><a class="label" href="fitur_feedback.php">Feedback</a></li>
       </div>
       <div class="frame">
         <div class="button" id="dropdownButton">

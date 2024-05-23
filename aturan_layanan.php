@@ -136,7 +136,7 @@ if (isset($_GET['hal'])) {
         <li class="item"><a class="label" href="#">Informasi</a></li>
         <li class="item"><a class="label" href="petugas/kepengurusan/staff.php">Kepengurusan</a></li>
         <li class="item"><a class="label" href="#tentang">Tentang</a></li>
-        <li class="item"><a class="label" href="pengguna/feedback.php">Feedback</a></li>
+        <li class="item"><a class="label" href="fitur_feedback.php">Feedback</a></li>
       </div>
       <div class="frame">
         <div class="button" id="dropdownButton">
