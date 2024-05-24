@@ -99,7 +99,7 @@ if (isset($_GET['hal'])) {
         </li>
 
         <li class="item"><a class="label" href="#">Informasi</a></li>
-        <li class="item"><a class="label" href="petugas/kepengurusan/staff.php">Kepengurusan</a></li>
+        <li class="item"><a class="label" href="petugas/kepengurusan/kepengurusan.php">Kepengurusan</a></li>
         <li class="item"><a class="label" href="#tentang">Tentang</a></li>
         <li class="item"><a class="label" href="fitur_feedback.php">Feedback</a></li>
       </div>
@@ -155,11 +155,9 @@ if (isset($_GET['hal'])) {
             </div>
           </div>
         </form>
+        <br>
+        <div class="heading-2">Daftar Layanan</div>
       <?php } ?>
-
-
-
-      <div class="heading-2">Daftar Layanan</div>
       <div class="frame-3">
         <div class="wrapper-table" style="width: 100%;">
           <table class="table">
@@ -181,7 +179,10 @@ if (isset($_GET['hal'])) {
                 <td class="text-wrapper-2"><?= $tampil['spesifikasi'] ?></td>
                 <?php if ($_SESSION['level'] == 'petugas') { ?>
                   <td class="text-wrapper-2">
-                    <a href="layanan.php?hal=hapus&id=<?= $tampil['id'] ?>" onclick="return confirm('Apakah yakin ingin menghapus data ini?')" class="btn btn-danger">Hapus</a>
+                    <a href="layanan.php?hal=hapus&id=<?= $tampil['id'] ?>" onclick="return confirm('Apakah yakin ingin menghapus data ini?')">
+                      <button type="submit" class="button-trash">
+                        <img class="icon" src="img/trash.png" />
+                      </button></a>
                   </td>
                 <?php } ?>
               </tr>

@@ -134,7 +134,7 @@ if (isset($_GET['hal'])) {
         </li>
 
         <li class="item"><a class="label" href="#">Informasi</a></li>
-        <li class="item"><a class="label" href="petugas/kepengurusan/staff.php">Kepengurusan</a></li>
+        <li class="item"><a class="label" href="petugas/kepengurusan/kepengurusan.php">Kepengurusan</a></li>
         <li class="item"><a class="label" href="#tentang">Tentang</a></li>
         <li class="item"><a class="label" href="fitur_feedback.php">Feedback</a></li>
       </div>
@@ -211,9 +211,9 @@ if (isset($_GET['hal'])) {
                   </div>
                 </div>
         </form>
+        <br>
+        <div class="heading-2">Daftar Persyaratan & Aturan</div>
       <?php } ?>
-      <br>
-      <div class="heading-2">Daftar Persyaratan & Aturan</div>
       <div class="frame-3">
         <div class="wrapper-table">
           <table class="table">
@@ -224,7 +224,7 @@ if (isset($_GET['hal'])) {
               <th class="text-wrapper-2" style="width: 28%;">Syarat dan ketentuan</th>
               <th class="text-wrapper-2">Format Pendukung</th>
               <?php if ($_SESSION['level'] == 'petugas') { ?>
-                <th class="text-wrapper-2">Aksi</th>
+                <th class="text-wrapper-2" style="text-align: center;">Aksi</th>
               <?php } ?>
             </tr>
             <?php
@@ -240,9 +240,17 @@ if (isset($_GET['hal'])) {
                 <td class="text-wrapper-2"><a href="downloadfile.php?url=<?= $tampil['template_data']; ?>"><?php echo $tampil['template_data']; ?></a></td>
                 <!-- <td><?= $tampil['template_data'] ?></td> -->
                 <?php if ($_SESSION['level'] == 'petugas') { ?>
-                  <td class="text-wrapper-2">
-                    <a href="aturan_layanan.php?hal=edit&id=<?= $tampil['id'] ?>" class="btn btn-warning"><i class="fa-solid fa-pen-to-square"></i></a>
-                    <a href="aturan_layanan.php?hal=hapus&id=<?= $tampil['id'] ?>" onclick="return confirm('Apakah yakin ingin menghapus data ini?')" name="hapus" class="btn btn-danger"><i class="fa-solid fa-trash"></i></a>
+                  <td class="text-wrapper-2" style="text-align: center;">
+                    <a href="aturan_layanan.php?hal=edit&id=<?= $tampil['id'] ?>">
+                      <button type="button" class="button-edit">
+                        <img class="icon" src="img/edit.png" />
+                      </button>
+                    </a>
+                    <a href="aturan_layanan.php?hal=hapus&id=<?= $tampil['id'] ?>" onclick="return confirm('Apakah yakin ingin menghapus data ini?')" name="hapus">
+                      <button type="submit" class="button-trash">
+                        <img class="icon" src="img/trash.png" />
+                      </button>
+                    </a>
                   </td>
                 <?php } ?>
               </tr>

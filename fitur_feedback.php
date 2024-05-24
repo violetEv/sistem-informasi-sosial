@@ -97,7 +97,7 @@ if (isset($_POST['simpan'])) {
         </li>
 
         <li class="item"><a class="label" href="#">Informasi</a></li>
-        <li class="item"><a class="label" href="petugas/kepengurusan/staff.php">Kepengurusan</a></li>
+        <li class="item"><a class="label" href="petugas/kepengurusan/kepengurusan.php">Kepengurusan</a></li>
         <li class="item"><a class="label" href="#tentang">Tentang</a></li>
         <li class="item"><a class="label" href="fitur_feedback.php">Feedback</a></li>
       </div>
@@ -129,9 +129,6 @@ if (isset($_POST['simpan'])) {
         ?>
         <div class="frame-3">
           <div class="div-2">
-            <div class="alert alert-warning" role="alert" style="width:98.5%;">
-              Beri Review atau feedback terkait kinerja kami, agar menjadi bahan evaluasi kami kedepannya:)
-            </div>
             <div class="frame-4">
               <div class="text-wrapper-3">Username</div>
               <div class="field-form-isi">
@@ -141,14 +138,14 @@ if (isset($_POST['simpan'])) {
             <div class="frame-4">
               <div class="text-wrapper-3">Tangggapan</div>
               <div class="field-form-isi">
-                <textarea type="text" class="form-input" style="resize: vertical; width: 100%; max-width: 100%; min-width: 100%; min-height: 180px;" value="<?= @$vdesk ?>" placeholder="Masukkan tanggapan minimal 200 kata" <?= @$vdesk ?> name="deskripsi" required></textarea>
+                <textarea type="text" class="form-input" style="resize: vertical; width: 100%; max-width: 100%; min-width: 100%; min-height: 180px;" value="<?= @$vdesk ?>" placeholder="Masukkan tanggapan anda" <?= @$vdesk ?> name="deskripsi" required></textarea>
               </div>
             </div>
             <div class=" frame-7">
               <button type="submit" class="button" onclick="return validateForm()">
-                <div class="text-3">Simpan</div>
+                <div class="text-3">Tambahkan</div>
               </button>
-              <button class="button-2" type="button" id="resetButton"><span class="text-4">Reset</span></button>
+              <button class="button-2" type="button" id="resetButton"><span class="text-4">Reset Data</span></button>
             </div>
           </div>
       </form>
@@ -167,7 +164,7 @@ if (isset($_POST['simpan'])) {
               <!-- Tampilkan tombol hapus hanya jika level pengguna adalah 'warga' -->
               <?php $isOwner = $row['userId'] == $username = $_SESSION['username']; ?>
               <?php if ($isOwner) { ?>
-                <a href="?hapus=<?= $row['id'] ?>" class="btn btn-danger btn-sm">Hapus</a>
+                <a href="?hapus=<?= $row['id'] ?>">Hapus</a>
               <?php } ?>
             </div>
           <?php } ?>

@@ -2,6 +2,7 @@
 session_start();
 include "../../koneksi.php";
 error_reporting(E_ALL ^ (E_NOTICE | E_WARNING));
+
 if (!isset($_SESSION['username'])) {
     die("Anda belum login, klik <a href=\"../../index.php\">disini</a> untuk login");
 } else {
@@ -76,7 +77,7 @@ if (isset($_GET['hal']) && $_SESSION['level'] == 'petugas') {
 
 <body>
     <!-- navbar -->
-   <nav class="navbar navbar-expand-lg navbar-light shadow-lg fixed-top" style="background-color: #68A7AD;">
+    <nav class="navbar navbar-expand-lg navbar-light shadow-lg fixed-top" style="background-color: #68A7AD;">
         <div class="container-fluid">
             <a class="navbar-brand" href="../../home.php">S I L A D U</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
@@ -91,12 +92,12 @@ if (isset($_GET['hal']) && $_SESSION['level'] == 'petugas') {
                         <a class="nav-link" href="#" aria-current="page">Layanan</a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                             <li><a class="dropdown-item" href="../../petugas/aturan_layanan.php">
-                                <?php if ($_SESSION['level'] == 'petugas') { ?>
-                                    Input Aturan Layanan
-                                <?php } else {?>
-                                    Aturan Layanan
-                                <?php }?>
-                            </a></li>
+                                    <?php if ($_SESSION['level'] == 'petugas') { ?>
+                                        Input Aturan Layanan
+                                    <?php } else { ?>
+                                        Aturan Layanan
+                                    <?php } ?>
+                                </a></li>
                             <li><a class="dropdown-item" href="../../petugas/layanan.php">Spesifikasi Layanan</a></li>
                         </ul>
                     </li>
@@ -110,7 +111,7 @@ if (isset($_GET['hal']) && $_SESSION['level'] == 'petugas') {
                         <a class="nav-link" href="../../pengguna/feedback.php">Feedback</a>
                     </li>
                 </ul>
-                
+
                 <span class="navbar-profile">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item dropdown">
@@ -134,7 +135,7 @@ if (isset($_GET['hal']) && $_SESSION['level'] == 'petugas') {
             <div class="card-wrap mt-5">
                 <div class="card pengaduan-form">
                     <div class="card-header form-peng">
-                        <h2 class="card-title text-center" >INPUT DATA STAFF</h2>
+                        <h2 class="card-title text-center">INPUT DATA STAFF</h2>
                     </div>
                     <div class="card-body">
                         <form method="post" action="proses.php" enctype="multipart/form-data">
@@ -159,7 +160,7 @@ if (isset($_GET['hal']) && $_SESSION['level'] == 'petugas') {
                             <div class="mb-3 row">
                                 <label for="formFileMultiple" class="col-sm-3 col-form-label text-start">Foto</label>
                                 <div class="col-sm-9 ">
-                                <!-- <img src="staff/<?php echo $tampil['foto'] ?>" width="100" height="100"> -->
+                                    <!-- <img src="staff/<?php echo $tampil['foto'] ?>" width="100" height="100"> -->
                                     <input type="file" class="form-control" name="foto" id="foto" accept="image/*">
                                 </div>
                             </div>
@@ -184,7 +185,7 @@ if (isset($_GET['hal']) && $_SESSION['level'] == 'petugas') {
         <div class="card-wrap mt-4">
             <!-- <div class="card tabel-form"> -->
             <!-- <div class="card-header"> -->
-            <h3 class="card-title text-center mb-3" style= "padding-top: 90px;" >List Staff Desa Kenanten</h3>
+            <h3 class="card-title text-center mb-3" style="padding-top: 90px;">List Staff Desa Kenanten</h3>
             <!-- </div> -->
             <!-- <div class="card-body"> -->
             <table class="table table-bordered table-striped">

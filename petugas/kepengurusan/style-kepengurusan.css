@@ -1,11 +1,11 @@
-.spesifikasi-layanan {
+.kepengurusan {
   display: inline-flex;
   flex-direction: column;
   align-items: flex-start;
   position: relative;
 }
 
-.spesifikasi-layanan .navigation {
+.kepengurusan .navigation {
   display: flex;
   width: 100%;
   height: 88px;
@@ -21,7 +21,7 @@
   border-color: var(--stroke);
 }
 
-.spesifikasi-layanan .logo {
+.kepengurusan .logo {
   display: flex;
   width: 239px;
   align-items: center;
@@ -30,13 +30,13 @@
   position: relative;
 }
 
-.spesifikasi-layanan .group {
+.kepengurusan .group {
   position: relative;
   width: 40px;
   height: 22.76px;
 }
 
-.spesifikasi-layanan .text {
+.kepengurusan .text {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -44,13 +44,13 @@
   flex: 0 0 auto;
 }
 
-.spesifikasi-layanan .g {
+.kepengurusan .g {
   position: relative;
   width: 62px;
   height: 24px;
 }
 
-.spesifikasi-layanan .text-wrapper {
+.kepengurusan .text-wrapper {
   color: var(--black);
   position: absolute;
   top: 0;
@@ -63,14 +63,14 @@
   white-space: nowrap;
 }
 
-.spesifikasi-layanan .div-wrapper {
+.kepengurusan .div-wrapper {
   position: relative;
   width: 37px;
   height: 24px;
   margin-right: -2px;
 }
 
-.spesifikasi-layanan .div {
+.kepengurusan .div {
   position: absolute;
   top: 0;
   left: 0;
@@ -83,7 +83,7 @@
   white-space: nowrap;
 }
 
-.spesifikasi-layanan .menu {
+.kepengurusan .menu {
   align-items: center;
   justify-content: center;
   display: flex;
@@ -93,7 +93,7 @@
   flex-grow: 1;
 }
 
-.spesifikasi-layanan .item {
+.kepengurusan .item {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -104,7 +104,7 @@
   border-radius: 8px;
 }
 
-.spesifikasi-layanan .label {
+.kepengurusan .label {
   color: var(--black);
   position: relative;
   width: fit-content;
@@ -119,7 +119,7 @@
   font-style: var(--body-regular-font-style);
 }
 
-.spesifikasi-layanan .label-2 {
+.kepengurusan .label-2 {
   color: var(--blue-1);
   position: relative;
   width: fit-content;
@@ -134,7 +134,7 @@
   font-style: var(--body-regular-font-style);
 }
 
-.spesifikasi-layanan .frame {
+.kepengurusan .frame {
   display: flex;
   flex-direction: column;
   width: 239px;
@@ -144,8 +144,8 @@
   position: relative;
 }
 
-.spesifikasi-layanan .button-no,
-.spesifikasi-layanan .button {
+.kepengurusan .button-no,
+.kepengurusan .button {
   all: unset;
   box-sizing: border-box;
   padding: 10px 18px;
@@ -165,11 +165,11 @@
   transition: background-color 0.3s ease; /* Added transition effect */
 }
 
-.spesifikasi-layanan .button:hover {
+.kepengurusan .button:hover {
   background-color: var(--black); /* Added hover effect */
 }
 
-.spesifikasi-layanan .button-2 {
+.kepengurusan .button-2 {
   all: unset;
   box-sizing: border-box;
   padding: 10px 18px;
@@ -188,16 +188,16 @@
   transition: background-color 0.3s ease; /* Added transition effect */
 }
 
-.spesifikasi-layanan .button-2:hover {
+.kepengurusan .button-2:hover {
   background-color: var(--grey-1); /* Added hover effect */
 }
 
-.spesifikasi-layanan .button-2:active {
+.kepengurusan .button-2:active {
   background-color: var(--grey-2); /* Added active effect */
 }
 
 
-.spesifikasi-layanan .text-2 {
+.kepengurusan .text-2 {
   position: relative;
   width: fit-content;
   font-family: var(--body-bold-font-family);
@@ -210,13 +210,13 @@
   font-style: var(--body-bold-font-style);
 }
 
-.spesifikasi-layanan .img {
+.kepengurusan .img {
   position: relative;
   width: 24px;
   height: 24px;
 }
 
-.spesifikasi-layanan .paragraph-container {
+.kepengurusan .paragraph-container {
   display: flex;
   flex-direction: column;
   width: 819px;
@@ -226,7 +226,7 @@
   flex: 0 0 auto;
 }
 
-.spesifikasi-layanan .heading {
+.kepengurusan .heading {
   align-self: stretch;
   font-weight: var(--heading-2-semibold-font-weight);
   color: var(--neutraltext-primary);
@@ -240,7 +240,7 @@
   font-style: var(--heading-2-semibold-font-style);
 }
 
-.spesifikasi-layanan .description {
+.kepengurusan .description {
   color: var(--neutraltext-secondary);
   text-align: center;
   position: relative;
@@ -253,7 +253,7 @@
   font-style: var(--heading-4-regular-font-style);
 }
 
-.spesifikasi-layanan .frame-3 {
+.kepengurusan .frame-3 {
   display: flex;
   flex-direction: column;
   width: 100%;
@@ -269,7 +269,7 @@
   box-shadow: 7px 8px 54px #4921ff12;
 }
 
-.spesifikasi-layanan .div-2 {
+.kepengurusan .div-2 {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -280,7 +280,7 @@
   flex: 0 0 auto;
 }
 
-.spesifikasi-layanan .frame-4 {
+.kepengurusan .frame-4 {
   display: flex;
   align-items: flex-start;
   gap: 32px;
@@ -295,13 +295,13 @@
   border-color: var(--stroke);
 }
 
-.spesifikasi-layanan .text-wrapper-2 {
+.kepengurusan .text-wrapper-2 {
   position: relative;
   margin-top: -1px;
   color: var(--neutraltext-secondary);
   position: relative;
   align-self: stretch;
-  text-align: center;
+  text-align: left;
   padding-left: 18px;
   padding-top: 24px;
   padding-right: 18px;
@@ -315,7 +315,7 @@
   font-style: var(--heading-4-regular-font-style);
 }
 
-.spesifikasi-layanan .text-wrapper-3 {
+.kepengurusan .text-wrapper-3 {
   position: relative;
   width: 40%;
   margin-top: -1px;
@@ -327,7 +327,7 @@
   line-height: 27px;
 }
 
-.spesifikasi-layanan .smithy-weber {
+.kepengurusan .smithy-weber {
   position: relative;
   width: fit-content;
   margin-top: -1.5px;
@@ -339,14 +339,14 @@
   line-height: normal;
 }
 
-.spesifikasi-layanan .field-up {
+.kepengurusan .field-up {
   width: 56%;
   align-items: flex-start;
   display: flex;
   position: relative;
 }
 
-.spesifikasi-layanan .frame-7 {
+.kepengurusan .frame-7 {
   display: flex;
   align-items: center;
   justify-content: flex-end;
@@ -357,7 +357,7 @@
   flex: 0 0 auto;
 }
 
-.spesifikasi-layanan .text-3 {
+.kepengurusan .text-3 {
   position: relative;
   width: fit-content;
   margin-top: -1px;
@@ -371,7 +371,7 @@
   font-style: var(--body-bold-font-style);
 }
 
-.spesifikasi-layanan .text-4 {
+.kepengurusan .text-4 {
   position: relative;
   width: fit-content;
   margin-top: -1px;
@@ -385,7 +385,7 @@
   font-style: var(--body-bold-font-style);
 }
 
-.spesifikasi-layanan .heading-2 {
+.kepengurusan .heading-2 {
   align-self: stretch;
   font-weight: var(--heading-2-semibold-font-weight);
   color: var(--black);
@@ -398,7 +398,7 @@
   font-style: var(--heading-2-semibold-font-style);
 }
 
-.spesifikasi-layanan .p {
+.kepengurusan .p {
   color: var(--gray);
   position: relative;
   align-self: stretch;
@@ -410,7 +410,7 @@
   font-style: var(--heading-4-regular-font-style);
 }
 
-.spesifikasi-layanan .footer {
+.kepengurusan .footer {
   display: flex;
   flex-direction: column;
   width: 100%;
@@ -422,7 +422,7 @@
   background-color: var(--blue-1);
 }
 
-.spesifikasi-layanan .frame-16 {
+.kepengurusan .frame-16 {
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
@@ -432,7 +432,7 @@
   flex: 0 0 auto;
 }
 
-.spesifikasi-layanan .logo-2 {
+.kepengurusan .logo-2 {
   display: inline-flex;
   align-items: center;
   gap: 10px;
@@ -443,7 +443,7 @@
   border-radius: 8px;
 }
 
-.spesifikasi-layanan .text-7 {
+.kepengurusan .text-7 {
   color: var(--logo-1);
   position: absolute;
   top: 0;
@@ -456,7 +456,7 @@
   white-space: nowrap;
 }
 
-.spesifikasi-layanan .frame-17 {
+.kepengurusan .frame-17 {
   display: flex;
   width: 365px;
   align-items: flex-start;
@@ -464,7 +464,7 @@
   position: relative;
 }
 
-.spesifikasi-layanan .menu-2 {
+.kepengurusan .menu-2 {
   flex-direction: column;
   align-items: flex-start;
   display: flex;
@@ -474,7 +474,7 @@
   flex-grow: 1;
 }
 
-.spesifikasi-layanan .heading-3 {
+.kepengurusan .heading-3 {
   width: fit-content;
   font-weight: 700;
   color: var(--stroke);
@@ -487,7 +487,7 @@
   letter-spacing: 0;
 }
 
-.spesifikasi-layanan .item-2 {
+.kepengurusan .item-2 {
   position: relative;
   align-self: stretch;
   margin-top: -1px;
@@ -499,7 +499,7 @@
   line-height: 24px;
 }
 
-.spesifikasi-layanan .item-3 {
+.kepengurusan .item-3 {
   position: relative;
   align-self: stretch;
   font-family: var(--body-regular-font-family);
@@ -510,7 +510,7 @@
   line-height: 24px;
 }
 
-.spesifikasi-layanan .link-wrapper {
+.kepengurusan .link-wrapper {
   display: flex;
   align-items: center;
   gap: 754px;
@@ -520,7 +520,7 @@
   flex: 0 0 auto;
 }
 
-.spesifikasi-layanan .link {
+.kepengurusan .link {
   display: inline-flex;
   align-items: center;
   gap: 4px;
@@ -528,13 +528,13 @@
   flex: 0 0 auto;
 }
 
-.spesifikasi-layanan .ic-baseline {
+.kepengurusan .ic-baseline {
   position: relative;
   width: 20px;
   height: 20px;
 }
 
-.spesifikasi-layanan .item-4 {
+.kepengurusan .item-4 {
   position: relative;
   width: fit-content;
   margin-top: 14px;
@@ -548,7 +548,7 @@
 }
 
 
-.spesifikasi-layanan .BG-wrapper {
+.kepengurusan .BG-wrapper {
   display: flex;
   flex-direction: column;
   width: 1297px;
@@ -560,7 +560,7 @@
   left: -127px;
 }
 
-.spesifikasi-layanan .BG {
+.kepengurusan .BG {
   position: relative;
   flex: 1;
   align-self: stretch;
@@ -568,7 +568,7 @@
   flex-grow: 1;
 }
 
-.spesifikasi-layanan .frame-2-1 {
+.kepengurusan .frame-2-1 {
   display: flex;
   flex-direction: column;
   width: 100%;
@@ -585,7 +585,7 @@
 
 /* ----- */
 
-.spesifikasi-layanan .field-form-isi {
+.kepengurusan .field-form-isi {
   position: relative;
   display: flex;
   flex-direction: column;
@@ -594,12 +594,12 @@
   width: 56%;
 }
 
-.spesifikasi-layanan .form-input::placeholder {
+.kepengurusan .form-input::placeholder {
   color: var(--gray); /* Warna hint teks */
 }
 
 /* ------ */
-.spesifikasi-layanan .field-form-dropdown {
+.kepengurusan .field-form-dropdown {
   position: relative;
   display: flex;
   flex-direction: column;
@@ -608,7 +608,7 @@
   width: 56%;
 }
 
-.spesifikasi-layanan .dropdown-icon {
+.kepengurusan .dropdown-icon {
   position: absolute;
   top: 50%;
   right: 12px;
@@ -624,7 +624,7 @@
 
 /* ---- */
 
-/* .spesifikasi-layanan .field-up {
+/* .kepengurusan .field-up {
   width: 545px;
   align-items: flex-start;
   display: flex;
@@ -632,7 +632,7 @@
   width: 56%;
 } */
 
-.spesifikasi-layanan .smithy-weber-wrapper {
+.kepengurusan .smithy-weber-wrapper {
   display: inline-flex;
   align-items: center;
   gap: 10px;
@@ -645,7 +645,7 @@
   border-color: var(--stroke);
 }
 
-.spesifikasi-layanan .frame-6 {
+.kepengurusan .frame-6 {
   display: flex;
   align-items: center;
   gap: 10px;
@@ -659,7 +659,7 @@
   border-color: var(--stroke);
 }
 
-.spesifikasi-layanan .file-input {
+.kepengurusan .file-input {
   position: absolute;
   width: 0;
   height: 0;
@@ -668,7 +668,7 @@
   z-index: -1;
 }
 
-.spesifikasi-layanan .file-label {
+.kepengurusan .file-label {
   cursor: pointer;
   color: var(--gray);
   font-family: var(--body-regular-font-family);
@@ -677,14 +677,14 @@
   height: auto;
 }
 
-.spesifikasi-layanan .file-label::after {
+.kepengurusan .file-label::after {
   content: attr(data-text);
 }
 
 /* --- */
 
-.spesifikasi-layanan .button-edit,
-.spesifikasi-layanan .button-trash {
+.kepengurusan .button-edit,
+.kepengurusan .button-trash {
   all: unset;
   box-sizing: border-box;
   display: inline-flex;
@@ -699,29 +699,29 @@
   transition: background-color 0.3s ease; /* Tambahkan efek transisi */
 }
 
-.spesifikasi-layanan .button-edit:hover,
-.spesifikasi-layanan .button-trash:hover {
+.kepengurusan .button-edit:hover,
+.kepengurusan .button-trash:hover {
   filter: brightness(90%); /* Tambahkan efek brightness pada hover */
 }
 
-.spesifikasi-layanan .button-edit:active,
-.spesifikasi-layanan .button-trash:active {
+.kepengurusan .button-edit:active,
+.kepengurusan .button-trash:active {
   filter: brightness(80%); /* Tambahkan efek brightness pada active */
 }
 
 /* --- */
-.spesifikasi-layanan .frame {
+.kepengurusan .frame {
   display: flex;
   align-items: flex-end;
   justify-content: flex-end;
   position: relative;
 }
 
-.spesifikasi-layanan .frame:hover .dropdown-menu {
+.kepengurusan .frame:hover .dropdown-menu {
   display: block;
 }
 
-.spesifikasi-layanan .dropdown-menu {
+.kepengurusan .dropdown-menu {
   display: none;
   position: absolute;
   background-color: var(--white);
@@ -734,7 +734,7 @@
   border-radius: 5px;
 }
 
-.spesifikasi-layanan .dropdown-menu-log {
+.kepengurusan .dropdown-menu-log {
   display: none;
   position: absolute;
   background-color: var(--white);
@@ -746,34 +746,34 @@
   border-radius: 5px;
 }
 
-.spesifikasi-layanan .frame:hover .dropdown-menu-log,
-.spesifikasi-layanan .item.layanan:hover .dropdown-menu {
+.kepengurusan .frame:hover .dropdown-menu-log,
+.kepengurusan .item.layanan:hover .dropdown-menu {
   display: block; /* Tampilkan dropdown menu saat item dihover */
 }
 
-.spesifikasi-layanan .dropdown-menu li {
+.kepengurusan .dropdown-menu li {
   position: relative;
   display: block;
 }
 
-.spesifikasi-layanan .dropdown-menu li a {
+.kepengurusan .dropdown-menu li a {
   color: var(--black);
   padding: 12px 16px;
   text-decoration: none;
   display: block;
 }
 
-.spesifikasi-layanan .dropdown-menu li a:hover {
+.kepengurusan .dropdown-menu li a:hover {
   background-color: var(--stroke);
 }
 
 /* Style untuk label layanan */
-.spesifikasi-layanan .label.layanan {
+.kepengurusan .label.layanan {
   cursor: pointer;
 }
 
 
-.spesifikasi-layanan .menu-dropdown {
+.kepengurusan .menu-dropdown {
   display: none;
   position: absolute;
   background-color: var(--white);
@@ -782,24 +782,24 @@
   z-index: 1;
 }
 
-.spesifikasi-layanan .label.layanan:hover + .menu-dropdown {
+.kepengurusan .label.layanan:hover + .menu-dropdown {
   display: block;
 }
 
-.spesifikasi-layanan .menu-dropdown li a {
+.kepengurusan .menu-dropdown li a {
   color: var(--black);
   padding: 12px 16px;
   text-decoration: none;
   display: block;
 }
 
-.spesifikasi-layanan .menu-dropdown li a:hover {
+.kepengurusan .menu-dropdown li a:hover {
   background-color: var(--stroke);
 }
 
 /* ------ */
 
-.spesifikasi-layanan .form-isi {
+.kepengurusan .form-isi {
   display: flex;
   flex-direction: column;
   width: 100%;
@@ -811,7 +811,7 @@
 }
 
 /* ----- */
-.spesifikasi-layanan .form-input, .spesifikasi-layanan .form-dropdown{
+.kepengurusan .form-input, .kepengurusan .form-dropdown{
   padding: 10px 14px;
   border: none;
   outline: none;
@@ -825,4 +825,30 @@
   -webkit-appearance: none; /* Remove default styling for dropdowns in Safari */
   -moz-appearance: none;    /* Remove default styling for dropdowns in Firefox */
   appearance: none;         /* Remove default styling for dropdowns in other browsers */
+}
+
+.form-control2 {
+  display: block;
+  width: 100%;
+  padding: 10px 14px;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.5;
+  font-family: var(--body-regular-font-family);
+  background-clip: padding-box;
+  border: 1.5px solid;
+  border-color: var(--stroke);
+  border-radius: 8px;
+  transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+
+.kepengurusan .form-input2{
+  border: none;
+  outline: none;
+  border-radius: 8px;
+  font-family: var(--body-regular-font-family);
+  font-weight: 500;
+  color: var(--black);
+  font-size: 20px;
+  letter-spacing: 0;
 }
