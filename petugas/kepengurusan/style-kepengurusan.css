@@ -717,6 +717,132 @@
   position: relative;
 }
 
+.kepengurusan .frame-11 {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 40px;
+  margin-bottom: 24px;
+  position: relative;
+  flex: 1;
+  flex-grow: 1;
+}
+
+.kepengurusan .frame-10 {
+  position: relative;
+  flex: 1;
+  flex-grow: 1;
+  background-color: var(--white);
+  width: fit-content;
+  border-radius: 3%;
+}
+
+
+.kepengurusan .frame-12 {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 19px;
+  position: relative;
+  align-self: stretch;
+  width: 100%;
+  flex: 0 0 auto;
+  padding: 10px;
+}
+
+.kepengurusan .frame-13 {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  position: relative;
+  align-self: stretch;
+  width: 100%;
+  flex: 0 0 auto;
+}
+
+.kepengurusan .nama {
+  position: relative;
+  width: fit-content;
+  margin-top: 10px;
+  font-family: var(--body-regular-font-family);
+  font-weight: 700;
+  color: var(--gray);
+  font-size: 12px;
+  letter-spacing: 0;
+  line-height: 18px;
+  white-space: nowrap;
+  text-transform: uppercase;
+}
+
+.kepengurusan .frame-14 {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 7px;
+  position: relative;
+  align-self: stretch;
+  width: 100%;
+  flex: 0 0 auto;
+}
+
+.kepengurusan .element-rules-of {
+  width: 310px;
+  height: 100%;
+  margin-right: -24px;
+  font-weight: 700;
+  color: var(--black);
+  font-size: 24px;
+  line-height: 32px;
+  position: relative;
+  margin-top: -1px;
+  font-family: var(--body-regular-font-family);
+  letter-spacing: 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.kepengurusan .frame-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 64px;
+  position: relative;
+  align-self: stretch;
+  width: 100%;
+  flex: 0 0 auto;
+}
+
+.kepengurusan .frame-9 {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 50px;
+  position: relative;
+  align-self: stretch;
+  width: 100%;
+  flex: 0 0 auto;
+}
+
+.kepengurusan .mask-group {
+  position: relative;
+  width: 310px;
+  height: 244px;
+  border-radius: 16px;
+}
+
+.kepengurusan .list-kepengurusan {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  position: relative;
+  align-self: stretch;
+  width: 100%;
+  flex: 0 0 auto;
+  flex-wrap: wrap;
+}
+
 .kepengurusan .frame:hover .dropdown-menu {
   display: block;
 }

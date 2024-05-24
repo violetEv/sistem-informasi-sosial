@@ -71,7 +71,7 @@ if (isset($_GET['hal']) && $_SESSION['level'] == 'petugas') {
         </li>
 
         <li class="item"><a class="label" href="#">Informasi</a></li>
-        <li class="item"><a class="label" href="petugas/kepengurusan/kepengurusan.php">Kepengurusan</a></li>
+        <li class="item"><a class="label" href="../../petugas/kepengurusan/kepengurusan.php">Kepengurusan</a></li>
         <li class="item"><a class="label" href="#tentang">Tentang</a></li>
         <li class="item"><a class="label" href="../../fitur_feedback.php">Feedback</a></li>
       </div>
@@ -122,8 +122,8 @@ if (isset($_GET['hal']) && $_SESSION['level'] == 'petugas') {
                 <div class="text-wrapper-3">Gambar</div>
                 <div class="field-up">
                   <div class="smithy-weber-wrapper">
-                    <label for="gambar" class="file-label">Choose file</label>
-                    <input type="file" class="file-input" id="gambar" name="gambar" accept="../../image/*" required>
+                    <label for="foto" class="file-label">Choose file</label>
+                    <input type="file" class="file-input" id="foto" name="foto" accept="../../image/*" required>
                   </div>
                   <div class="frame-6">
                     <div class="smithy-weber" id="file-chosen">No file chosen</div>
@@ -148,57 +148,88 @@ if (isset($_GET['hal']) && $_SESSION['level'] == 'petugas') {
         </form>
         <br>
         <div class="heading-2">Daftar Staff Pengurus</div>
-      <?php } ?>
 
 
-      <div class="frame-3">
-        <div class="wrapper-table" style="width: 100%;">
-          <table class="table">
-            <tr class="text-wrapper-2" style="background-color: var(  --stroke); border-radius:30%">
-              <th class="text-wrapper-2">No.</th>
-              <th class="text-wrapper-2">ID</th>
-              <th class="text-wrapper-2">NIP</th>
-              <th class="text-wrapper-2">Foto</th>
-              <th class="text-wrapper-2">Nama</th>
-              <th class="text-wrapper-2">Jabatan</th>
-              <?php if ($_SESSION['level'] == 'petugas') { ?>
-                <th class="text-wrapper-2" style="text-align: center;">Aksi</th>
-              <?php } ?>
-            </tr>
-            <?php
-            include "../../koneksi.php";
-            $no = 1;
-            $sql = "SELECT * FROM kepengurusan ORDER BY id ASC";
-            $result = mysqli_query($koneksi, $sql);
-
-            if (!$result) {
-              die("Query Error: " . mysqli_error($koneksi) . "-" . mysqli_error($koneksi));
-            }
-            while ($tampil = mysqli_fetch_array($result)) { ?>
-              <tr>
-                <td class="text-wrapper-2"><?= $no++ ?></td>
-                <td class="text-wrapper-2"><?= $tampil['id'] ?></td>
-                <td class="text-wrapper-2"><?= $tampil['nip'] ?></td>
-                <td class="text-wrapper-2"><img src="staff/<?= $tampil['foto'] ?>" width="100" height="100"></td>
-                <td class="text-wrapper-2"><?= $tampil['nama'] ?></td>
-                <td class="text-wrapper-2"><?= $tampil['jabatan'] ?></td>
-                <?php if ($_SESSION['level'] == "petugas") { ?>
-                  <td class="text-wrapper-2" style="text-align: center;">
-                    <a href="staff.php?hal=hapus&id=<?= $tampil['id'] ?>" onclick="return confirm('Apakah yakin ingin menghapus data ini?')">
-                      <button type="submit" class="button-trash">
-                        <img class="icon" src="../../img/trash.png" />
-                      </button></a>
-                  </td>
+        <div class="frame-3">
+          <div class="wrapper-table" style="width: 100%;">
+            <table class="table">
+              <tr class="text-wrapper-2" style="background-color: var(  --stroke); border-radius:30%">
+                <th class="text-wrapper-2">No.</th>
+                <th class="text-wrapper-2">ID</th>
+                <th class="text-wrapper-2">NIP</th>
+                <th class="text-wrapper-2">Foto</th>
+                <th class="text-wrapper-2">Nama</th>
+                <th class="text-wrapper-2">Jabatan</th>
+                <?php if ($_SESSION['level'] == 'petugas') { ?>
+                  <th class="text-wrapper-2" style="text-align: center;">Aksi</th>
                 <?php } ?>
               </tr>
-            <?php } ?>
-          </table>
+              <?php
+              include "../../koneksi.php";
+              $no = 1;
+              $sql = "SELECT * FROM kepengurusan ORDER BY id ASC";
+              $result = mysqli_query($koneksi, $sql);
+
+              if (!$result) {
+                die("Query Error: " . mysqli_error($koneksi) . "-" . mysqli_error($koneksi));
+              }
+              while ($tampil = mysqli_fetch_array($result)) { ?>
+                <tr>
+                  <td class="text-wrapper-2"><?= $no++ ?></td>
+                  <td class="text-wrapper-2"><?= $tampil['id'] ?></td>
+                  <td class="text-wrapper-2"><?= $tampil['nip'] ?></td>
+                  <td class="text-wrapper-2"><img src="kepengurusan/<?= $tampil['foto'] ?>" width="100" height="100"></td>
+                  <td class="text-wrapper-2"><?= $tampil['nama'] ?></td>
+                  <td class="text-wrapper-2"><?= $tampil['jabatan'] ?></td>
+                  <?php if ($_SESSION['level'] == "petugas") { ?>
+                    <td class="text-wrapper-2" style="text-align: center;">
+                      <a href="staff.php?hal=hapus&id=<?= $tampil['id'] ?>" onclick="return confirm('Apakah yakin ingin menghapus data ini?')">
+                        <button type="submit" class="button-trash">
+                          <img class="icon" src="../../img/trash.png" />
+                        </button></a>
+                    </td>
+                  <?php } ?>
+                </tr>
+              <?php } ?>
+            </table>
+          </div>
+        </div>
+      <?php } ?>
+
+      <div class="frame-wrapper">
+        <div class="frame-9">
+          <div class="list-kepengurusan">
+            <?php
+            $query = "SELECT * FROM kepengurusan";
+            $result = $koneksi->query($query);
+
+            if ($result->num_rows > 0) {
+              while ($row = $result->fetch_assoc()) {
+                echo ' <div class="frame-11"> 
+                <div class="frame-10">
+      <img class="mask-group" src="' . $row['foto'] . '" />
+      <div class="frame-12">
+        <div class="div-3">
+          <div class="frame-13">
+          <div  class="element-rules-of" >' . (empty($row["nama"]) ? $row['userId'] : $row["nama"]) . '</div>
+          </div>
+          <div class="frame-14">
+            <p class="nama">' . $row['jabatan'] . '</p>
+          </div>
+        </div>
+      </div>
+      </div>
+    </div>';
+              }
+            } else {
+              echo '<p>Tidak ada artikel ditemukan untuk kategori ini.</p>';
+            }
+            ?>
+          </div>
         </div>
       </div>
 
-
     </div>
-
     <footer class="footer">
       <div class="frame-16">
         <div class="logo-2">
