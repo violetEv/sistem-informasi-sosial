@@ -1,0 +1,470 @@
+.index {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+  overflow: hidden;
+}
+
+.index .frame-wrapper {
+  width: 100%;
+  height: 100%;
+}
+
+.index .frame {
+  display: flex;
+  width: 100vw;
+  flex-direction: row;
+  align-items: center;
+  padding: 20px;
+  position: relative;
+}
+
+.index .div-left {
+  display: inline-flex;
+  align-items: center;
+  width: 50%;
+  position: relative;
+  align-self: stretch;
+}
+.index .div-right {
+  align-items: center;
+  width: 50%;
+  padding: 12px;
+  align-self: stretch;
+  display: flex;
+  flex-direction: column;
+}
+
+.index .group-wrapper {
+  display: flex;
+  width: 100%;
+  height: auto;
+  align-items: center;
+  gap: 24px;
+  position: relative;
+  align-self: stretch;
+}
+
+.index .group {
+  position: relative;
+  width: 700px;
+  align-items: flex-end;
+  height: 1269.73px;
+  background-image: url(./img/split-bg.png);
+  background-size: 100% 100%;
+}
+
+.index .rectangle {
+  position: relative;
+  height: 510px;
+  top: 760px;
+  border-radius: 0px 0px 24px 24px;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 29.18%, rgb(0, 0, 0) 100%);
+}
+
+.index .frame-2 {
+  display: flex;
+  flex-direction: column;
+  width: 85%;
+  align-items: flex-start;
+  text-align: justify;
+  gap: 20px;
+  position: absolute;
+  top: 978px;
+  left: 24px;
+}
+
+.index .text-wrapper {
+  position: relative;
+  align-self: stretch;
+  margin-top: -1px;
+  font-family: "Plus Jakarta Sans", Helvetica;
+  font-weight: 700;
+  color: #ffffff;
+  font-size: 60px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.index .p {
+  position: relative;
+  align-self: stretch;
+  font-family: "Plus Jakarta Sans", Helvetica;
+  font-weight: 500;
+  color: #ffffff;
+  font-size: 20px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.index .div-wrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  width: 100%;
+  position: relative;
+  flex: 1;
+  align-self: stretch;
+  flex-grow: 1;
+}
+
+.index .frame-3 {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  padding: 12px;
+  position: relative;
+  flex: 0 0 auto;
+}
+
+.index .frame-4 {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  position: relative;
+  flex: 0 0 auto;
+}
+
+.img {
+  width: 20%;
+}
+.logo-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px; 
+}
+
+.index .text {
+  display: inline-flex;
+  align-items: flex-start;
+  position: relative;
+  flex: 0 0 auto;
+}
+
+.index .g {
+  position: relative;
+  width: 114px;
+  height: 48px;
+}
+
+.index .text-2 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-family: "Inter", Helvetica;
+  font-weight: 400;
+  color: #192644;
+  font-size: 40px;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.index .g-2 {
+  position: relative;
+  width: 70px;
+  height: 48px;
+  margin-right: -2px;
+}
+
+.index .text-3 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-family: "Inter", Helvetica;
+  font-weight: 400;
+  color: var(--blue-1);
+  font-size: 40px;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.index .frame-5 {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  position: relative;
+  flex: 0 0 auto;
+}
+
+.index .smithy-weber-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 10px;
+  position: relative;
+  flex: 1;
+  flex-grow: 1;
+  border-bottom-width: 1.5px;
+  border-bottom-style: solid;
+  border-color: var(--blue-1);
+}
+
+.index .smithy-weber {
+  width: fit-content;
+  margin-top: -1.5px;
+  font-weight: 600;
+  color: var(--blue-1);
+  position: relative;
+  font-family: "Plus Jakarta Sans", Helvetica;
+  font-size: 20px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.index .frame-6 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 10px;
+  position: relative;
+  flex: 1;
+  flex-grow: 1;
+  border-bottom-width: 1.5px;
+  border-bottom-style: solid;
+  border-color: var(--stroke);
+}
+
+.index .smithy-weber-2 {
+  width: fit-content;
+  margin-top: -1.5px;
+  font-weight: 600;
+  color: var(--gray);
+  position: relative;
+  font-family: "Plus Jakarta Sans", Helvetica;
+  font-size: 20px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.index .smithy-weber-3 {
+  align-self: stretch;
+  font-weight: 600;
+  color: var(--black);
+  position: relative;
+  font-family: "Plus Jakarta Sans", Helvetica;
+  font-size: 20px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.index .frame-7 {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 24px;
+  position: relative;
+  align-self: stretch;
+  width: 100%;
+  flex: 0 0 auto;
+}
+
+.index .input {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px;
+  position: relative;
+  align-self: stretch;
+  width: 100%;
+  flex: 0 0 auto;
+  border-radius: 8px;
+  border: 1.5px solid;
+  border-color: var(--stroke);
+}
+
+.index .field {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  position: relative;
+  flex: 0 0 auto;
+}
+
+.index .img-2 {
+  position: relative;
+  width: 24px;
+  height: 24px;
+}
+
+.index .smithy-weber-4 {
+  position: relative;
+  width: fit-content;
+  font-family: "Plus Jakarta Sans", Helvetica;
+  font-weight: 500;
+  color: var(--gray);
+  font-size: 14px;
+  letter-spacing: 0;
+  line-height: normal;
+  background: transparent;
+  border: none;
+  padding: 0;
+}
+
+.index .icon {
+  display: flex;
+  width: 24px;
+  align-items: center;
+  justify-content: space-around;
+  gap: 10px;
+  position: relative;
+}
+
+.index .label {
+  position: relative;
+  width: fit-content;
+  font-family: "Plus Jakarta Sans", Helvetica;
+  font-weight: 500;
+  color: var(--gray);
+  font-size: 14px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.index .frame-8 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 18px 0px;
+  position: relative;
+  align-self: stretch;
+  width: 100%;
+  flex: 0 0 auto;
+  background-color: var(--blue-1);
+  border-radius: 8px;
+}
+
+.index .smithy-weber-5 {
+  width: fit-content;
+  margin-top: -1px;
+  font-weight: 600;
+  color: var(--white);
+  position: relative;
+  font-family: "Plus Jakarta Sans", Helvetica;
+  font-size: 20px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.index .frame-9 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 18px 0px;
+  position: relative;
+  align-self: stretch;
+  width: 100%;
+  flex: 0 0 auto;
+  border-radius: 8px;
+  border: 1px solid;
+  border-color: var(--stroke);
+}
+
+.index .smithy-weber-6 {
+  width: fit-content;
+  margin-top: -1px;
+  font-weight: 600;
+  color: var(--black);
+  position: relative;
+  font-family: "Plus Jakarta Sans", Helvetica;
+  font-size: 20px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.index .frame-10 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  position: relative;
+  align-self: stretch;
+  width: 100%;
+  flex: 0 0 auto;
+}
+
+.index .smithy-weber-7 {
+  width: fit-content;
+  margin-top: -1px;
+  font-weight: 500;
+  color: var(--black);
+  text-align: center;
+  position: relative;
+  font-family: "Plus Jakarta Sans", Helvetica;
+  font-size: 20px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.index .smithy-weber-8 {
+  width: fit-content;
+  margin-top: -1px;
+  font-weight: 600;
+  color: var(--blue-1);
+  text-align: center;
+  position: relative;
+  font-family: "Plus Jakarta Sans", Helvetica;
+  font-size: 20px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.tabs {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  align-self: stretch;
+  align-items: center;
+}
+
+
+.tab-label {
+  padding: 10px 40px;
+  cursor: pointer;
+  text-align: center;
+  flex: 1;
+  flex-grow: 1;
+  border-bottom: 1px solid #cccccc;
+  font-weight: 600;
+  font-family: "Plus Jakarta Sans", Helvetica;
+  font-size: 20px;
+}
+
+
+.tab-radio {
+  display: none;
+}
+
+
+.tab-content {
+  order: 1;
+  width: 100%;
+  display: none;
+  padding-top: 8px;
+  line-height: 1.5;
+  transition: opacity 0.5s ease-in-out;
+}
+
+
+.tab-radio:checked+.tab-label {
+  font-weight: bold;
+  color: #4921FF;
+  border-bottom: 2px solid #4921FF;
+}
+
+
+.tab-radio:checked+.tab-label+.tab-content {
+  display: initial;
+  opacity: 1;
+}

@@ -1,0 +1,410 @@
+.sign-in {
+    display: flex;
+    flex-direction: row;
+    width: 50%;
+}
+
+.sign-in .frame-wrapper {
+    background-color: #b14747;
+    width: 100%;
+    height: 100%;
+}
+
+.sign-in .frame {
+    display: flex;
+    width: 100%;
+    align-items: flex-start;
+    justify-content: space-between;
+    position: relative;
+}
+
+.sign-in .div {
+    display: inline-flex;
+    align-items: flex-start;
+    gap: 10px;
+    position: relative;
+    align-self: stretch;
+    flex: 0 0 auto;
+}
+
+.sign-in .rectangle {
+    position: relative;
+    height: 411px;
+    top: 613px;
+    border-radius: 0px 0px 24px 24px;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0) 29.18%, rgb(0, 0, 0) 100%);
+}
+
+.sign-in .frame-2 {
+    display: flex;
+    flex-direction: column;
+    width: 652px;
+    align-items: flex-start;
+    gap: 20px;
+    position: absolute;
+    top: 733px;
+    left: 24px;
+}
+
+.sign-in .text-wrapper {
+    position: relative;
+    align-self: stretch;
+    margin-top: -1px;
+    font-family: "Plus Jakarta Sans", Helvetica;
+    font-weight: 700;
+    color: #ffffff;
+    font-size: 60px;
+    letter-spacing: 0;
+    line-height: normal;
+}
+
+.sign-in .p {
+    position: relative;
+    align-self: stretch;
+    font-family: "Plus Jakarta Sans", Helvetica;
+    font-weight: 500;
+    color: #ffffff;
+    font-size: 20px;
+    letter-spacing: 0;
+    line-height: normal;
+}
+
+.sign-in .div-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    gap: 10px;
+    flex: 1;
+    align-self: stretch;
+    flex-grow: 1;
+    width: 100%;
+    height: 100%;
+}
+
+.sign-in .frame-3 {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    padding:10px;
+    position: relative;
+    flex: 0 0 auto;
+}
+
+
+.sign-in .img {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.sign-in .text {
+    display: inline-flex;
+    align-items: flex-start;
+    position: relative;
+    flex: 0 0 auto;
+}
+
+.sign-in .text-2 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-family: "Inter", Helvetica;
+    font-weight: 400;
+    color: #192644;
+    font-size: 40px;
+    letter-spacing: 0;
+    line-height: normal;
+    white-space: nowrap;
+}
+
+.sign-in .g-2 {
+    position: relative;
+    width: 70px;
+    height: 48px;
+    margin-right: -2px;
+}
+
+.sign-in .text-3 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-family: "Inter", Helvetica;
+    font-weight: 400;
+    color: var(--blue-1);
+    font-size: 40px;
+    letter-spacing: 0;
+    line-height: normal;
+    white-space: nowrap;
+}
+
+.sign-in .frame-5 {
+    display: flex;
+    width: 576px;
+    align-items: center;
+    position: relative;
+    flex: 0 0 auto;
+}
+
+.sign-in .smithy-weber-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 10px;
+    position: relative;
+    flex: 1;
+    flex-grow: 1;
+    border-bottom-width: 1.5px;
+    border-bottom-style: solid;
+    border-color: var(--blue-1);
+}
+
+.sign-in .smithy-weber {
+    width: fit-content;
+    margin-top: -1.5px;
+    font-weight: 600;
+    color: var(--blue-1);
+    position: relative;
+    font-family: "Plus Jakarta Sans", Helvetica;
+    font-size: 20px;
+    letter-spacing: 0;
+    line-height: normal;
+}
+
+.sign-in .frame-6 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 10px;
+    position: relative;
+    flex: 1;
+    flex-grow: 1;
+    border-bottom-width: 1.5px;
+    border-bottom-style: solid;
+    border-color: var(--stroke);
+}
+
+.sign-in .smithy-weber-3 {
+    align-self: stretch;
+    font-weight: 600;
+    color: var(--black);
+    position: relative;
+    font-family: "Plus Jakarta Sans", Helvetica;
+    font-size: 20px;
+    letter-spacing: 0;
+    line-height: normal;
+}
+
+.sign-in .frame-7 {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 24px;
+    position: relative;
+    align-self: stretch;
+    width: 100%;
+    flex: 0 0 auto;
+}
+
+.sign-in .input {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 18px;
+    position: relative;
+    align-self: stretch;
+    width: auto;
+    flex: 0 0 auto;
+    border-radius: 8px;
+    border: 1.5px solid;
+    border-color: var(--stroke);
+}
+
+.sign-in .field {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    position: relative;
+    flex: 0 0 auto;
+}
+
+.sign-in .img-2 {
+    position: relative;
+    width: 24px;
+    height: 24px;
+}
+
+.sign-in .frame-8 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 18px 0px;
+    position: relative;
+    align-self: stretch;
+    width: 100%;
+    flex: 0 0 auto;
+    background-color: var(--blue-1);
+    border-radius: 8px;
+}
+
+.sign-in .smithy-weber-4 {
+    width: 100%;
+    font-family: "Plus Jakarta Sans", Helvetica;
+    font-weight: 500;
+    color: var(--gray);
+    font-size: 14px;
+    letter-spacing: 0;
+    border: none;
+    box-sizing: border-box;
+    outline: none;
+    padding: 0;
+}
+
+.sign-in .icon {
+    display: flex;
+    width: 24px;
+    align-items: center;
+    justify-content: space-around;
+    gap: 10px;
+    position: relative;
+}
+
+
+.sign-in.field-form-isi {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    /* border: 1.5px solid var(--stroke); */
+    border-radius: 8px;
+    width: 100%;
+}
+
+.sign-in .smithy-weber-4::before {
+    content: '';
+    position: absolute;
+    left: 10px;
+    /* Position the icon */
+    top: 50%;
+    transform: translateY(-50%);
+    width: 20px;
+    height: 20px;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+}
+
+
+
+.sign-in .smithy-weber-4::placeholder {
+    color: var(--gray);
+    /* Warna hint teks */
+}
+
+.sign-in .frame-8 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 18px 0px;
+    position: relative;
+    align-self: stretch;
+    width: 100%;
+    flex: 0 0 auto;
+    background-color: var(--blue-1);
+    border-radius: 8px;
+  }
+  
+  .sign-in .smithy-weber-5 {
+    width: 100%;
+    height: 100%;
+    font-weight: 600;
+    position: relative;
+    color: var(--white);
+    font-family: "Plus Jakarta Sans", Helvetica;
+    font-size: 20px;
+    letter-spacing: 0;
+    line-height: normal;
+    background: none;
+    border: none;
+    outline: none;
+    transition: background-color 0.3s, color 0.3s;
+  }
+  
+  .sign-in .frame-9 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 18px 0px;
+    position: relative;
+    align-self: stretch;
+    width: 100%;
+    flex: 0 0 auto;
+    border-radius: 8px;
+    border: 1px solid;
+    border-color: var(--stroke);
+  }
+  
+  .sign-in .smithy-weber-6 {
+    display: block;
+    width: 100%;
+    height: 100%;
+    font-weight: 600;
+    color: var(--black);
+    position: relative;
+    font-family: "Plus Jakarta Sans", Helvetica;
+    font-size: 20px;
+    letter-spacing: 0;
+    line-height: normal;
+    background: none;
+    outline: none;
+    border: none;
+  }
+  .sign-in .frame-9:hover {
+    background-color: red; 
+    color: white;
+    /* color: var(--white);  */
+}
+  
+  .sign-in .frame-10 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    position: relative;
+    align-self: stretch;
+    width: 100%;
+    flex: 0 0 auto;
+  }
+  
+  .sign-in .smithy-weber-7 {
+    width: fit-content;
+    margin-top: -1px;
+    font-weight: 500;
+    color: var(--black);
+    text-align: center;
+    position: relative;
+    font-family: "Plus Jakarta Sans", Helvetica;
+    font-size: 20px;
+    letter-spacing: 0;
+    line-height: normal;
+  }
+  .sign-in .smithy-weber-8 {
+    width: fit-content;
+    margin-top: -1px;
+    font-weight: 600;
+    color: var(--blue-1);
+    text-align: center;
+    position: relative;
+    font-family: "Plus Jakarta Sans", Helvetica;
+    font-size: 20px;
+    letter-spacing: 0;
+    line-height: normal;
+  }
+    

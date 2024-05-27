@@ -18,6 +18,7 @@ if (empty($username && $password && $nama && $email && $alamat && $tlp && $level
         echo "<script>
             alert('username milik orang lain. Pakai username lain!');
             </script>";
+        echo "<script>history.back();</script>";
     } else {
         $newpsw = md5($password);
         $sql = "INSERT INTO user VALUES ('" . $username . "','" . $newpsw . "','" . $nama . "','" . $email . "','" . $alamat . "','" . $tlp . "','" . $level . "','" . $nip . "')";
@@ -25,18 +26,18 @@ if (empty($username && $password && $nama && $email && $alamat && $tlp && $level
         if ($a === true) { ?>
             <script>
                 alert('Anda sukses registrasi');
-                location.replace('login.php');
+                location.replace('home.php');
             </script><?php
                     } else {
                         echo "<script>alert('Error memasukkan data!');</script>";
                         echo "<script>history.back();</script>";
                     }
                 }
-} else { ?>
+            } else { ?>
     <script>
         alert('Ulangi, Ada Input yang Kosong');
         history.back();
     </script>
 <?php
-    }
+            }
 ?>

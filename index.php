@@ -1,84 +1,73 @@
 <html>
 
 <head>
-	<title>SILADU</title>
-	<!-- <link rel="stylesheet" href="style.css"> -->
-	<style>
-		body {
-			background: linear-gradient(to right, #33ccff 0%, #ff99cc 100%);
-			background-size: auto;
-			background-repeat: repeat;
-		}
-		table {
-			font-family: 'Poppins', sans-serif;
-			border-collapse: collapse;
-		}
-
-		table,
-		th,
-		td {
-			border: 1px solid #9edcf9;
-		}
-
-		button {
-			background-color: #B40404;
-			color: white;
-			padding: 14px 20px;
-			margin: 8px 0;
-			border: none;
-			border-radius: 5px;
-			cursor: pointer;
-			font-size: 15px;
-		}
-
-		.logo {
-			width: 300px;
-			/* height: 200px; */
-		}
-
-		.jargon {
-			font-size: 20px;
-		}
-
-		button:hover {
-			background-color: #fa736b;
-		}
-
-		.perintah {
-			/* font-size: 14px; */
-			text-align: center;
-		}
-	</style>
-	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<title>SosialNet</title>
+	<link rel="stylesheet" href="style.css">
+	<link rel="stylesheet" href="globals.css" />
+	<link rel="stylesheet" href="styleguide.css" />
+	<link rel="stylesheet" href="style-index.css" />
 </head>
 
 <body>
-	<center><br><br>
-	<div class="container">
-	<table width=90% height=90%>
-			<tr>
-				<td bgcolor=#9edcf9><br>
-					<h1 align=center>Sistem Informasi Pelayanan dan Pengaduan Masyarakat</h1>
-				</td>
-			</tr>
-			<tr>
-				<td bgcolor="#e1edf4">
-					<marquee behavior="alternate">Selamat Datang di SILADU</marquee>
-				</td>
-			</tr>
-			<tr>
-				<td bgcolor=#fff><br>
-					<p align=center class="jargon"><img src="image/cover.jpg" class="logo"><br><br>Sampaikan Layanan dan Pengaduan yang anda inginkan!<br>
-					<p class="perintah">Silahkan login jika Anda sudah memiliki akun</p>
-					</p>
-					<p align=center><a href="login.php"><button>Login</button></a></p>
-					<p class="perintah">Belum punya akun? Silahkan mendaftar disini</p>
-					<p align=center><a href="register.php"><button>Register</button></a></p><br>
-				</td>
-			</tr>
-		</table>
+	<?php
+	session_start();
+	?>
+	<div class="index">
+		<div class="frame-wrapper">
+			<div class="frame">
+				<!-- split kiri -->
+				<div class="div-left">
+					<div class="group-wrapper">
+						<div class="group">
+							<div class="rectangle"></div>
+						</div>
+					</div>
+					<div class="frame-2">
+						<div class="text-wrapper">SosialNet</div>
+						<p class="p">
+							Menghubungkan masyarakat dengan informasi, bantuan sosial, dan solusi! Platform online yang memudahkan
+							akses semua orang terhadap informasi sosial yang dibutuhkan.
+						</p>
+					</div>
+				</div>
+				<!-- split kanan -->
+				<div class="div-right">
+					<!-- logo -->
+					<div class="logo-wrapper">
+					<img class="img" src="img/logo.png" alt="Logo" /></div>
+					<!-- tabs -->
+					<div class="tabs">
+						<input type="radio" class="tab-radio" name="tabs" id="tab1" checked>
+						<label for="tab1" class="tab-label">Masuk</label>
+						<div class="tab-content">
+							<?php include 'login.php'; ?> </div>
+						<input type="radio" class="tab-radio" name="tabs" id="tab2">
+						<label for="tab2" class="tab-label">Buat Akun Baru</label>
+						<div class="tab-content">
+							<?php include 'register.php'; ?> </div>
+					</div>
+				</div>
+				<!-- </div> -->
+			</div>
+		</div>
 	</div>
-	</center><br>
+	<?php
+    if (isset($_SESSION['error_message'])) {
+        echo "<script>alert('" . $_SESSION['error_message'] . "');</script>";
+        unset($_SESSION['error_message']); // 
+    }
+    ?>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const register = urlParams.get('register');
+            if (register) {
+                document.getElementById('tab2').checked = true;
+            }if (urlParams.get('login')) {
+                document.getElementById('tab1').checked = true;
+            }
+        });
+    </script>
 </body>
 
 </html>
