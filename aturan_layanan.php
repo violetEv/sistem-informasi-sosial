@@ -3,7 +3,7 @@ session_start();
 include "koneksi.php";
 error_reporting(E_ALL ^ (E_NOTICE | E_WARNING));
 if (!isset($_SESSION['username'])) {
-  die("Anda belum login, klik <a href=\"../index.php\">disini</a> untuk login");
+  die("Anda belum login, klik <a href=\"index.php\">disini</a> untuk login");
 } else {
   $username = $_SESSION['username'];
 }
@@ -247,7 +247,7 @@ if (isset($_GET['hal'])) {
                 <td class="text-wrapper-2"><?= $tampil['jenis'] ?></td>
                 <td class="text-wrapper-2"><?= $tampil['spesifikasi'] ?></td>
                 <td class="text-wrapper-2" style="text-align: justify; white-space: pre-wrap;"><?= nl2br($tampil['aturan'])  ?></td>
-                <td class="text-wrapper-2"><a href="downloadfile.php?url=<?= $tampil['template_data']; ?>"><?php echo $tampil['template_data']; ?></a></td>
+                <td class="text-wrapper-2"><a href="petugas/downloadfile.php?url=<?= $tampil['template_data']; ?>"><?php echo $tampil['template_data']; ?></a></td>
                 <!-- <td><?= $tampil['template_data'] ?></td> -->
                 <?php if ($_SESSION['level'] == 'petugas') { ?>
                   <td class="text-wrapper-2" style="text-align: center;">
