@@ -165,7 +165,7 @@ if (isset($_POST['simpan'])) {
                 <p style="margin-top: 10px;" class="mb-1"><?= $row['tanggapan'] ?></p>
                 <!-- Tampilkan tombol hapus hanya jika level pengguna adalah 'warga' -->
                 <?php $isOwner = $row['userId'] == $username = $_SESSION['username']; ?>
-                <?php if ($isOwner) { ?>
+                <?php if ($_SESSION['level'] == 'petugas') { ?>
                   <a href="?hapus=<?= $row['id'] ?>"><button type="submit" class="button-trash">
                       <img class="icon" src="img/trash.png" />
                     </button></a>
