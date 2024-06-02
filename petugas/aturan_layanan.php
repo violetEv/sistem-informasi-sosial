@@ -73,7 +73,7 @@ if (isset($_GET['hal'])) {
         if ($data) {
             $vjenis = $data['id_layanan'];
             $vdesk = $data['aturan'];
-            $vdata = $data['template_data']['name'];
+            $vdata = $data['template_data'];
         }
     } elseif ($_GET['hal'] == "hapus") {
         $hapus = mysqli_query($koneksi, "DELETE FROM aturan_layanan WHERE id='$_GET[id]'");
@@ -219,7 +219,7 @@ if (isset($_GET['hal'])) {
                                         $a = "SELECT * FROM layanan";
                                         $b = mysqli_query($koneksi, $a);
                                         while ($c = $b->fetch_array()) { ?>
-                                            <option value="<?php echo $c['id']; ?>"> <?php echo $c['spesifikasi']; ?></option>
+                                            <option value="<?php echo $c['id']; ?>" > <?php echo $c['spesifikasi']; ?></option>
                                         <?php } ?>
                                     </select>
                                 </div>
@@ -233,7 +233,7 @@ if (isset($_GET['hal'])) {
                             <div class="mb-3 row">
                                 <label for="formFileMultiple" class="col-sm-3 col-form-label text-start">Template Data Dukung</label>
                                 <div class="col-sm-9">
-                                    <input class="form-control" type="file" name="data" value="<?= @$vdata ?>" id="formFileMultiple" accept="">
+                                    <input class="form-control" type="file" name="data" value="<?= @$vdata ?>" id="formFileMultiple" accept="" required>
                                     <?php
                                     if ($_GET['hal'] == "edit") { ?>
                                         <label class="text-danger">Upload File terbaru untuk diperbarui</label>

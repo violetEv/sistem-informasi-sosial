@@ -14,27 +14,26 @@ $layanan = isset($_POST['spesifikasi']) ? $_POST['spesifikasi'] : null;
 
 
 if (isset($_POST['simpan'])) {
-  if (empty($jenis && $layanan) != true) {
-    $sql = "INSERT INTO layanan (jenis, spesifikasi)
-           values ('" . $jenis . "','" . $layanan . "')";
+  if (!empty($jenis) && !empty($layanan)) {
+    $sql = "INSERT INTO layanan (jenis, spesifikasi) values ('$jenis', '$layanan')";
     $a = $koneksi->query($sql);
     if ($a === true) {
       echo "<script>alert('Berhasil Mengirim Spesifikasi Layanan!');</script>";
-      header("refresh:2;url=layanan.php");
-      // echo "<script>location('layanan.php?status=sukses');</script>";
+      header("refresh:2;url=spesifikasi_layanan.php");
+      // echo "<script>location('spesifikasi_layanan.php?status=sukses');</script>";
     } else {
       echo "<script>alert('Gagal Menginput Spesifikasi Layanan!');</script>";
-      // echo "<script>location('layanan.php?status=gagal');</script>";
-      header("refresh:2;url=administrasi.php");
+      // echo "<script>location('spesifikasi_layanan.php?status=gagal');</script>";
+      header("refresh:2;url=spesifikasi_layanan.php");
     }
   } else {
     echo "<script>alert('Ada Input yang Kosong!');</script>";
-    // echo "<script>location('layanan.php?status=gagal');</script>";
-    header("refresh:2;url=layanan.php");
+    // echo "<script>location('spesifikasi_layanan.php?status=gagal');</script>";
+    header("refresh:2;url=spesifikasi_layanan.php");
   }
 } else {
   //  echo "<script>alert('Gagal Mengirim Pengaduan!');</script>";
-  echo "<script>location('layanan.php');</script>";
+  echo "<script>location('spesifikasi_layanan.php');</script>";
 }
 
 // tombol edit tabel
@@ -44,7 +43,7 @@ if (isset($_GET['hal'])) {
     if ($hapus) {
       echo "<script>
           alert('Hapus Data Sukses!');
-          location='layanan.php';
+          location='spesifikasi_layanan.php';
           </script>";
     }
   }
@@ -132,10 +131,10 @@ if (isset($_GET['hal'])) {
               <div class="frame-4">
                 <div class="text-wrapper-3">Jenis Layanan</div>
                 <div class="field-form-dropdown">
-                  <select class="form-dropdown" id="kategori" name="kategori" required>
+                  <select class="form-dropdown" name="jenis" required>
                     <option value="" disabled selected>Pilih jenis layanan</option>
-                    <option name="jenis" value="Pengaduan">Pengaduan</option>
-                    <option name="jenis" value="Administrasi">Administrasi</option>
+                    <option value="Pengaduan">Pengaduan</option>
+                    <option value="Administrasi">Administrasi</option>
                   </select>
                   <span class="dropdown-icon"></span>
                 </div>
@@ -179,7 +178,7 @@ if (isset($_GET['hal'])) {
                 <td class="text-wrapper-2"><?= $tampil['spesifikasi'] ?></td>
                 <?php if ($_SESSION['level'] == 'petugas') { ?>
                   <td class="text-wrapper-2">
-                    <a href="layanan.php?hal=hapus&id=<?= $tampil['id'] ?>" onclick="return confirm('Apakah yakin ingin menghapus data ini?')">
+                    <a href="spesifikasi_layanan.php?hal=hapus&id=<?= $tampil['id'] ?>" onclick="return confirm('Apakah yakin ingin menghapus data ini?')">
                       <button type="submit" class="button-trash">
                         <img class="icon" src="img/trash.png" />
                       </button></a>

@@ -216,6 +216,17 @@
   height: 24px;
 }
 
+.artikel .form-input2{
+  border: none;
+  outline: none;
+  border-radius: 8px;
+  font-family: var(--body-regular-font-family);
+  font-weight: 500;
+  color: var(--black);
+  font-size: 20px;
+  letter-spacing: 0;
+}
+
 .kepengurusan .paragraph-container {
   display: flex;
   flex-direction: column;

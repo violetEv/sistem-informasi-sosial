@@ -1,13 +1,53 @@
 <?php
 include "../../koneksi.php";
 session_start();
-
+error_reporting(E_ALL ^ (E_NOTICE | E_WARNING));
 if (!isset($_SESSION['username'])) {
   die("Anda belum login, klik <a href=\"../../index.php\">disini</a> untuk login");
 } else {
   $username = $_SESSION['username'];
   $nama = $_SESSION['nama'];
   $level = $_SESSION['level'];
+}
+
+$id = $_POST['id'];
+$nama = $_POST['nama'];
+$nip = $_POST['nip'];
+$jabatan = $_POST['jabatan'];
+$file_name = $_FILES['foto']['name'];
+$direktori = "../../uploads-gambar/";
+
+
+// Proses penambahan data pengurus ke dalam database
+if (isset($_POST['simpan'])) {
+  if (empty($id && $nama && $nip && $jabatan && $file_name) != true) {
+    $ekstensi_boleh = array('png', 'jpg', 'jpeg', 'webp');
+    $x = explode('.', $file_name);
+    $ekstensi = strtolower(end($x));
+    $file_tmp = $_FILES['foto']['tmp_name'];
+    $angka_acak = rand(1, 999);
+    $nama_gambar_baru = $angka_acak . '-' . $file_name;
+
+    if (in_array($ekstensi, $ekstensi_boleh)) {
+      move_uploaded_file($file_tmp, $direktori . $nama_gambar_baru);
+
+      $query = "INSERT INTO kepengurusan (id, nip, foto, nama, jabatan)
+               values ('$id','$nip','$nama_gambar_baru','$nama','$jabatan')";
+      $result = mysqli_query($koneksi, $query);
+
+      if ($result) {
+        echo "<script>alert('Berhasil Mengirim Aturan Layanan!'); window.location.href='kepengurusan.php';</script>";
+      } else {
+        echo "<script>alert('Query Error: " . mysqli_error($koneksi) . "');</script>";
+      }
+    } else {
+      echo "<script>alert('Ekstensi gambar hanya bisa jpg, jpeg, webp dan png');</script>";
+      echo "<script>window.location.href='kepengurusan.php';</script>";
+    }
+  } else {
+    echo "<script>alert('Ada Input Kosong!');</script>";
+    echo "<script>history.back()</script>";
+  }
 }
 
 if (isset($_GET['hal']) && $_SESSION['level'] == 'petugas') {
@@ -123,7 +163,7 @@ if (isset($_GET['hal']) && $_SESSION['level'] == 'petugas') {
                 <div class="field-up">
                   <div class="smithy-weber-wrapper">
                     <label for="foto" class="file-label">Choose file</label>
-                    <input type="file" class="file-input" id="foto" name="foto" accept="../../image/*" required>
+                    <input type="file" class="file-input" id="foto" name="foto" accept="image/*" required>
                   </div>
                   <div class="frame-6">
                     <div class="smithy-weber" id="file-chosen">No file chosen</div>
@@ -138,7 +178,7 @@ if (isset($_GET['hal']) && $_SESSION['level'] == 'petugas') {
               </div>
 
               <div class=" frame-7">
-                <button type="submit" class="button" onclick="return validateForm()">
+                <button type="submit" name="simpan" class="button">
                   <div class="text-3">Simpan</div>
                 </button>
                 <button class="button-2" type="button" id="resetButton"><span class="text-4">Reset</span></button>
@@ -178,12 +218,12 @@ if (isset($_GET['hal']) && $_SESSION['level'] == 'petugas') {
                   <td class="text-wrapper-2"><?= $no++ ?></td>
                   <td class="text-wrapper-2"><?= $tampil['id'] ?></td>
                   <td class="text-wrapper-2"><?= $tampil['nip'] ?></td>
-                  <td class="text-wrapper-2"><img src="kepengurusan/<?= $tampil['foto'] ?>" width="100" height="100"></td>
+                  <td class="text-wrapper-2"><img src="../../uploads-gambar/<?= $tampil['foto'] ?>" width="100" height="100"></td>
                   <td class="text-wrapper-2"><?= $tampil['nama'] ?></td>
                   <td class="text-wrapper-2"><?= $tampil['jabatan'] ?></td>
                   <?php if ($_SESSION['level'] == "petugas") { ?>
                     <td class="text-wrapper-2" style="text-align: center;">
-                      <a href="staff.php?hal=hapus&id=<?= $tampil['id'] ?>" onclick="return confirm('Apakah yakin ingin menghapus data ini?')">
+                      <a href="kepengurusan.php?hal=hapus&id=<?= $tampil['id'] ?>" onclick="return confirm('Apakah yakin ingin menghapus data ini?')">
                         <button type="submit" class="button-trash">
                           <img class="icon" src="../../img/trash.png" />
                         </button></a>
@@ -207,7 +247,7 @@ if (isset($_GET['hal']) && $_SESSION['level'] == 'petugas') {
               while ($row = $result->fetch_assoc()) {
                 echo ' <div class="frame-11"> 
                 <div class="frame-10">
-      <img class="mask-group" src="' . $row['foto'] . '" />
+                <img class="mask-group" src="../../uploads-gambar/' . $row['foto'] . '" />
       <div class="frame-12">
         <div class="div-3">
           <div class="frame-13">
@@ -275,7 +315,15 @@ if (isset($_GET['hal']) && $_SESSION['level'] == 'petugas') {
     </footer>
 
   </div>
-
+  <script>
+    document.getElementById('foto').addEventListener('change', function(event) {
+      const input = event.target;
+      const fileName = input.files.length > 0 ? input.files[0].name : 'No file chosen';
+      const fileChosenElement = document.getElementById('file-chosen');
+      fileChosenElement.textContent = fileName;
+      fileChosenElement.classList.add('form-input2');
+    });
+  </script>
 </body>
 
 </html>
