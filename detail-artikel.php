@@ -67,7 +67,7 @@ $nama = isset($row["nama"]) ? $row["nama"] : $row['userId'];
         </li>
 
         <li class="item"><a class="label" href="#">Informasi</a></li>
-        <li class="item"><a class="label" href="petugas/kepengurusan/kepengurusan.php">Kepengurusan</a></li>
+        <li class="item"><a class="label" href="kepengurusan.php">Kepengurusan</a></li>
         <li class="item"><a class="label" href="#tentang">Tentang</a></li>
         <li class="item"><a class="label" href="fitur_feedback.php">Feedback</a></li>
       </div>

@@ -181,7 +181,7 @@ if (isset($_GET['hal']) && $_SESSION['level'] == 'petugas') {
                 <button type="submit" name="simpan" class="button">
                   <div class="text-3">Simpan</div>
                 </button>
-                <button class="button-2" type="button" id="resetButton"><span class="text-4">Reset</span></button>
+                <button class="button-2" type="reset" name="reset" id="resetButton"><span class="text-4">Reset</span></button>
               </div>
             </div>
           </div>

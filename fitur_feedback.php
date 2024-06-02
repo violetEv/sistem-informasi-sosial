@@ -1,7 +1,7 @@
 <?php
 include "koneksi.php";
 session_start();
-
+error_reporting(E_ALL ^ (E_NOTICE | E_WARNING));
 if (!isset($_SESSION['username'])) {
   header("Location: index.php");
   exit;
@@ -24,27 +24,26 @@ if (isset($_GET['hapus'])) {
   $sql_delete = "DELETE FROM feedback WHERE id='$id_feedback'";
   $koneksi->query($sql_delete);
   echo "<script>alert('Feedback berhasil dihapus');</script>";
-  header("refresh:0;url=feedback.php");
+  header("refresh:0;url=fitur_feedback.php");
 }
 
 if (isset($_POST['simpan'])) {
   if (empty($tanggapan) != true) {
-    $sql = "INSERT INTO feedback (userId, tanggapan)
-             values ('" . $username . "','" . $tanggapan . "')";
+    $sql = "INSERT INTO feedback (userId, tanggapan) VALUES ('" . $_SESSION['username'] . "','" . $tanggapan . "')";
     $a = $koneksi->query($sql);
     if ($a === true) {
       echo "<script>alert('Berhasil Memberi Feedback!');</script>";
-      header("refresh:2;url=feedback.php");
+      header("refresh:2;url=fitur_feedback.php");
     } else {
       echo "<script>alert('Gagal Mengirim Feedback!');</script>";
-      header("refresh:2;url=feedback.php");
+      header("refresh:2;url=fitur_feedback.php");
     }
   } else {
     echo "<script>alert('Ada Input yang Kosong!');</script>";
-    echo "<script>location('feedback.php?status=gagal');</script>";
+    echo "<script>location('fitur_feedback.php?status=gagal');</script>";
   }
 } else {
-  echo "<script>location('feedback.php');</script>";
+  echo "<script>location('fitur_feedback.php');</script>";
 }
 
 ?>
@@ -97,8 +96,9 @@ if (isset($_POST['simpan'])) {
         </li>
 
         <li class="item">
-        <a href="<?php echo ($_SESSION['level'] == 'petugas') ? 'artikel-admin.php' : 'artikel-user.php'; ?>" class="label">Informasi</a></li>
-        <li class="item"><a class="label" href="petugas/kepengurusan/kepengurusan.php">Kepengurusan</a></li>
+          <a href="<?php echo ($_SESSION['level'] == 'petugas') ? 'artikel-admin.php' : 'artikel-user.php'; ?>" class="label">Informasi</a>
+        </li>
+        <li class="item"><a class="label" href="kepengurusan.php">Kepengurusan</a></li>
         <li class="item"><a class="label" href="#tentang">Tentang</a></li>
         <li class="item"><a class="label" href="fitur_feedback.php">Feedback</a></li>
       </div>
@@ -139,14 +139,14 @@ if (isset($_POST['simpan'])) {
             <div class="frame-4">
               <div class="text-wrapper-3">Tangggapan</div>
               <div class="field-form-isi">
-                <textarea type="text" class="form-input" style="resize: vertical; width: 100%; max-width: 100%; min-width: 100%; min-height: 180px;" value="<?= @$vdesk ?>" placeholder="Masukkan tanggapan anda" <?= @$vdesk ?> name="deskripsi" required></textarea>
+                <textarea type="text" class="form-input" style="resize: vertical; width: 100%; max-width: 100%; min-width: 100%; min-height: 180px;" value="<?= @$vdesk ?>" placeholder="Masukkan tanggapan anda" <?= @$vdesk ?> name="tanggapan" required></textarea>
               </div>
             </div>
             <div class=" frame-7">
-              <button type="submit" class="button" onclick="return validateForm()">
+              <button name="simpan" type="submit" class="button">
                 <div class="text-3">Tambahkan</div>
               </button>
-              <button class="button-2" type="button" id="resetButton"><span class="text-4">Reset Data</span></button>
+              <button class="button-2" name="reset" type="reset" id="resetButton"><span class="text-4">Reset Data</span></button>
             </div>
           </div>
       </form>
@@ -161,12 +161,16 @@ if (isset($_POST['simpan'])) {
               <div class="d-flex w-100 justify-content-between">
                 <h5 class="mb-1"><?= $row['userId'] ?></h5>
               </div>
-              <p class="mb-1"><?= $row['tanggapan'] ?></p>
-              <!-- Tampilkan tombol hapus hanya jika level pengguna adalah 'warga' -->
-              <?php $isOwner = $row['userId'] == $username = $_SESSION['username']; ?>
-              <?php if ($isOwner) { ?>
-                <a href="?hapus=<?= $row['id'] ?>">Hapus</a>
-              <?php } ?>
+              <div style="display: flex; justify-content: space-between">
+                <p style="margin-top: 10px;" class="mb-1"><?= $row['tanggapan'] ?></p>
+                <!-- Tampilkan tombol hapus hanya jika level pengguna adalah 'warga' -->
+                <?php $isOwner = $row['userId'] == $username = $_SESSION['username']; ?>
+                <?php if ($isOwner) { ?>
+                  <a href="?hapus=<?= $row['id'] ?>"><button type="submit" class="button-trash">
+                      <img class="icon" src="img/trash.png" />
+                    </button></a>
+                <?php } ?>
+              </div>
             </div>
           <?php } ?>
         </div>

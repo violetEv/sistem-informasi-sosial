@@ -139,7 +139,7 @@ if (isset($_GET['hal'])) {
         <li class="item">
           <a href="<?php echo ($_SESSION['level'] == 'petugas') ? 'artikel-admin.php' : 'artikel-user.php'; ?>" class="label">Informasi</a>
         </li>
-        <li class="item"><a class="label" href="petugas/kepengurusan/kepengurusan.php">Kepengurusan</a></li>
+        <li class="item"><a class="label" href="kepengurusan.php">Kepengurusan</a></li>
         <li class="item"><a class="label" href="#tentang">Tentang</a></li>
         <li class="item"><a class="label" href="fitur_feedback.php">Feedback</a></li>
       </div>
@@ -216,7 +216,7 @@ if (isset($_GET['hal'])) {
                 <button type="submit" name="simpan" class="button">
                   <div class="text-3">Simpan</div>
                 </button>
-                <button class="button-2" name="reset" type="button" id="resetButton"><span class="text-4">Reset</span></button>
+                <button class="button-2" name="reset" type="reset" id="resetButton"><span class="text-4">Reset</span></button>
               </div>
             </div>
           </div>
