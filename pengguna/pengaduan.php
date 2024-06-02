@@ -100,146 +100,111 @@ if (isset($_GET['hal'])) {
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
-    <title>Pengaduan</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <style>
-        h1 {
-            margin-top: 80px;
-            text-align: center;
-        }
-
-        body {
-            font-family: 'Poppins', sans-serif;
-        }
-
-        .layanan:hover>.dropdown-menu {
-            display: block;
-        }
-
-        button {
-            background-color: #2d2d44;
-            color: white;
-            padding: 14px 20px;
-            margin: 8px 0;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-
-        button:hover {
-            background-color: #fa736b;
-        }
-
-        .navbar-brand {
-            font-weight: bold;
-            color: #cdc2ae;
-        }
-
-        .pengaduan {
-            width: 95%;
-        }
-
-        .form-peng {
-            background-color: #ECE5C7;
-        }
-    </style>
+    <title>Layanan Pengaduan</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../globals.css" />
+    <link rel="stylesheet" href="../styleguide.css" />
+    <link rel="stylesheet" href="../style-aduan-masyarakat.css" />
 </head>
 
 <body>
-    <!-- navbar -->
-    <nav class="navbar navbar-expand-lg navbar-light shadow-lg fixed-top" style="background-color: #68A7AD;">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="../home.php">S I L A D U</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarText">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="../home.php">Home</a>
-                    </li>
-                    <li class="nav-item layanan">
-                        <a class="nav-link" href="#" aria-current="page">Layanan</a>
-                        <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                            <li><a class="dropdown-item" href="../petugas/aturan_layanan.php">
+    <div class="aduan-masyarakat">
+        <!-- navbar -->
+        <nav class="navigation">
+            <div class="logo">
+                <img class="group" src="../img/group-1-2.png" />
+                <div class="text">
+                    <div class="g">
+                        <div class="text-wrapper">Sosial</div>
+                    </div>
+                    <div class="div-wrapper">
+                        <div class="div">Net</div>
+                    </div>
+                </div>
+            </div>
+            <div class="menu">
+                <li class="item"><a class="label-2" href="../home.php">Home</a></li>
+                <li class="item layanan">
+                    <a class="label" href="#">Layanan</a>
+                    <ul class="dropdown-menu">
+                        <li>
+                            <a class="label" href="../aturan_layanan.php">
                                 <?php if ($_SESSION['level'] == 'petugas') { ?>
                                     Input Aturan Layanan
-                                <?php } else {?>
+                                <?php } else { ?>
                                     Aturan Layanan
-                                <?php }?>
-                            </a></li>
-                            <li><a class="dropdown-item" href="../petugas/layanan.php">Spesifikasi Layanan</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item kepengurusan">
-                        <a class="nav-link" aria-current="page" href="../petugas/kepengurusan/staff.php">Kepengurusan</a>
-                    </li>
-                    <li class="nav-item about">
-                        <a class="nav-link" href="../home.php#tentang">Tentang</a>
-                    </li>
-                    <li class="nav-item feedback">
-                        <a class="nav-link" href="../pengguna/feedback.php">Feedback</a>
-                    </li>
-                </ul>
-                
-                <span class="navbar-profile">
-                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                <?php $username = $_SESSION['username'];
-                                echo "$username"; ?>
+                                <?php } ?>
                             </a>
-                            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                <li><a class="dropdown-item" href="../logout.php">Logout</a></li>
-                            </ul>
                         </li>
+                        <li><a class="label" href="../spesifikasi_layanan.php">Spesifikasi Layanan</a></li>
                     </ul>
-                </span>
-            </div>
-        </div>
-    </nav>
+                </li>
 
-    <!-- banner -->
-    <h1> Layanan Pengaduan Masyarakat</h1>
-    <div class="container-fluid pengaduan">
-        <div class="card-wrap mt-5">
-            <div class="card pengaduan-form">
-                <div class="card-header form-peng">
-                    <h2 class="card-title text-center">FORM PENGADUAN</h2>
-                </div>
-                <div class="card-body">
-                    <div class="alert alert-warning" role="alert">
-                        Sebelum Mengisi Pengaduan, lihat persyaratan yang diinginkan terlebih dahulu pada <a href="../petugas/aturan_layanan.php">aturan layanan</a>
+                <li class="item"><a href="<?php echo ($_SESSION['level'] == 'petugas') ? '../artikel-admin.php' : '../artikel-user.php'; ?>" class="label">Informasi</a></li>
+                <li class="item"><a class="label" href="../petugas/kepengurusan/kepengurusan.php">Kepengurusan</a></li>
+                <li class="item"><a class="label" href="#tentang">Tentang</a></li>
+                <li class="item"><a class="label" href="../fitur_feedback.php">Feedback</a></li>
+            </div>
+            <div class="frame">
+                <div class="button" id="dropdownButton">
+                    <div class="text-2">
+                        <?php $username = $_SESSION['username'];
+                        echo "$username"; ?>
                     </div>
-                    <form action="" method="POST" enctype="multipart/form-data">
-                        <?php
-                        $a = mysqli_query($koneksi, "select * from user where username='$_SESSION[username]'");
-                        $tampil = mysqli_fetch_array($a);
-                        ?>
-                        <!-- <fieldset disabled> -->
-                        <div class="mb-3 row">
-                            <label for="disabledTextInput" class="col-sm-3 col-form-label text-start">ID Pengaduan</label>
-                            <div class="col-sm-9 ">
-                                <input type="text" class="form-control" name="id" value="<?= $data['id'] ?>" placeholder="Otomatis Oleh Sistem" disabled>
-                                <!-- <div class="keterangan">: </div> -->
+                    <img class="vuesax-outline-arrow" src="../img/vuesax-outline-arrow-down-2.svg" />
+                </div>
+                <ul class="dropdown-menu-log" id="dropdownMenu">
+                    <li><a href="../logout.php" class="label">Logout</a></li>
+                </ul>
+            </div>
+        </nav>
+        <div class="frame-2-1">
+            <div class="BG-wrapper"><img class="BG" src="../img/bg.png" /></div>
+            <div class="paragraph-container">
+                <p class="heading">Layanan Pengaduan<br />masyarakat</p>
+                <p class="description">
+                    Laporkan keresahanmu! Pastikan sertakan bukti yang konkrit, aktual, dan sesuai peraturan yang ada
+                    serta
+                    pastikan biodatamu benar.
+                </p>
+            </div>
+            <!-- form -->
+            <form class="form-isi" action="" method="POST" enctype="multipart/form-data">
+                <?php
+                $a = mysqli_query($koneksi, "select * from user where username='$_SESSION[username]'");
+                $tampil = mysqli_fetch_array($a);
+                ?>
+                <div class="frame-3">
+                    <div class="sebelum-mengisi-wrapper">
+                        <p class="sebelum-mengisi">
+                            <span class="span">Sebelum Mengisi Pengaduan, lihat persyaratan yang diinginkan terlebih dahulu
+                                pada
+                            </span>
+                            <span class="text-wrapper-2">aturan layanan</span>
+                        </p>
+                    </div>
+
+                    <div class="div-2">
+                        <div class="frame-4">
+                            <div class="text-wrapper-3">ID pengaduan</div>
+                            <div class="field-form-isi">
+                                <input type="text" class="form-input" placeholder="Otomatis oleh sistem" name="id" value="<?=$data['id'] ?>" disabled>
                             </div>
                         </div>
-                        <div class="mb-3 row">
-                            <label for="disabledTextInput" class="col-sm-3 col-form-label text-start">Nama Lengkap</label>
-                            <div class="col-sm-9 ">
-                                <input type="text" class="form-control" name="nama" value="<?= $tampil['nama'] ?>" disabled>
-                                <!-- <div class="keterangan">: <?= $tampil['nama'] ?></div> -->
+                        <div class="frame-4">
+                            <div class="text-wrapper-3">Nama Lengkap</div>
+                            <div class="field-form-isi">
+                                <input type="text" class="form-input" placeholder="Otomatis oleh sistem" name="username" value="<?=$tampil['nama'] ?>" disabled>
                             </div>
                         </div>
-                        <div class="mb-3 row">
-                            <label class="col-sm-3 col-form-label text-start">Jenis Pengaduan</label>
-                            <div class="col-sm-9">
-                                <select name="jenis" class="form-control">
+                        <div class="frame-4">
+                            <div class="text-wrapper-3">Jenis pengaduan</div>
+                            <div class="field-form-dropdown">
+                                <select class="form-dropdown" id="jenis" name="jenis" required>
                                     <?php
                                     include "../koneksi.php";
                                     $a = "SELECT * FROM layanan WHERE jenis = 'Pengaduan'";
@@ -252,46 +217,77 @@ if (isset($_GET['hal'])) {
                                 </select>
                             </div>
                         </div>
-                        <div class="mb-3 row">
-                            <label class="col-sm-3 col-form-label text-start">Deskripsi</label>
-                            <div class="col-sm-9">
-                                <textarea class="form-control" name="deskripsi" value="<?= @$vdesk ?>" placeholder="Tulis detail pengaduanmu max 200 kata"><?= $vdesk ?></textarea>
+                        <div class="frame-4">
+                            <div class="text-wrapper-3">Deskripsi</div>
+                            <div class="field-form-isi">
+                                <textarea type="text" class="form-input" value="<?= @$vdesk ?>" style="resize: vertical; width: 100%; max-width: 100%; min-width: 100%; min-height: 180px;" placeholder="Masukkan detail pengaduan maksimal 200 kata" id="deskripsi" name="deskripsi"><?= $vdesk ?></textarea>
                             </div>
                         </div>
-                        <div class="mb-3 row">
-                            <label for="formFileMultiple" class="col-sm-3 col-form-label text-start">Data Pendukung</label>
-                            <div class="col-sm-9">
-                                <input class="form-control" type="file" name="data" value="<?= @$vdata ?>" accept="application/pdf">
-                                <label class="text-danger" style="font-size:smaller">pastikan sesuai dengan format yang diminta</label>
+                        <div class="frame-4">
+                            <div class="text-wrapper-3">Data pendukung</div>
+                            <div class="field-up-wrapper">
+                                <div class="field-up">
+                                    <div class="smithy-weber-wrapper">
+                                        <label for="data" class="file-label">Chose file</label>
+                                        <input class="file-input" type="file" id="data" name="data" value="<?= @$vdata ?>" accept="application/pdf">
+                                    </div>
+                                    <div class="frame-7">
+                                        <div class="smithy-weber" id="file-chosen">No file chosen</div>
+                                    </div>
+                                </div>
+                                <p class="format-pdf-pastikan">
+                                    <span class="text-wrapper-4">Format .pdf </span>
+                                    <span class="text-wrapper-5">pastikan sesuai dengan format yang diminta</span>
+                                </p>
                             </div>
                         </div>
-                        <div class="button-align text-end">
-                            <button type="submit" name="simpan" class="btn btn-success">SIMPAN</button>
-                            <button type="reset" name="reset" class="btn btn-danger">RESET</button>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
 
-        <div class="card-wrap mt-4">
-            <!-- <div class="card tabel-form"> -->
-            <!-- <div class="card-header"> -->
-            <h3 class="card-title text-center">Datar Pengaduan</h3>
-            <!-- </div> -->
-            <div class="card-body">
-                <table class="table table-bordered table-striped">
-                    <tr class="text-center">
-                        <th>No.</th>
-                        <!-- <th>Tanggal Input Data</th> -->
-                        <th scope="col">ID</th>
-                        <th scope="col">Nama</th>
-                        <th scope="col">Jenis Pengaduan</th>
-                        <th scope="col">Deskripsi</th>
-                        <th scope="col">Data Pendukung</th>
+                    </div>
+                    <div class="frame-8">
+                        <button type="submit" class="button" onclick="return validateForm()">
+                            <div class="text-3">Tambahkan</div>
+                        </button>
+                        <button class="button-2" type="reset" id="resetButton">
+                            <span class="text-4">Reset Data</span>
+                        </button>
+                    </div>
+                </div>
+        </div>
+        </form>
+        <!-- daftar pengaduan -->
+        <div class="frame-9">
+            <div class="paragraph-container-2">
+                <div class="heading-2">Daftar Pengaduan Anda</div>
+                <p class="p">
+                    Kami akan merespons pengaduan Anda dengan segera untuk memastikan kepuasan pelanggan yang
+                    optimal!
+                </p>
+            </div>
+            <div class="frame-wrapper">
+                <table class="frame-10">
+                    <tr class="frame-11">
+                        <td class="frame-12">
+                            <div class="text-wrapper-6">No</div>
+                        </td>
+                        <td class="frame-13">
+                            <div class="text-wrapper-7">ID</div>
+                        </td>
+                        <td class="frame-14">
+                            <div class="text-wrapper-7">Nama</div>
+                        </td>
+                        <td class="frame-14">
+                            <div class="text-wrapper-7">Jenis Pengaduan</div>
+                        </td>
+                        <td class="frame-14">
+                            <div class="text-wrapper-7">Deskripsi</div>
+                        </td>
+                        <td class="frame-14">
+                            <div class="text-wrapper-7">Dokumen Pendukung</div>
+                        </td>
                         <?php if ($_SESSION['level'] == "warga" || $_SESSION['level'] == "petugas") { ?>
-                            <th scope="col">Aksi</th>
-                        <?php } ?>
+                            <td class="frame-15">
+                                <div class="text-wrapper-8">Aksi</div>
+                            </td><?php } ?>
                     </tr>
                     <?php
                     $no = 1;
@@ -301,37 +297,93 @@ if (isset($_GET['hal'])) {
                         $a = mysqli_query($koneksi, "SELECT * FROM pengaduan where userId='$_SESSION[username]'");
                     }
                     while ($tampil = mysqli_fetch_array($a)) : ?>
-                        <tr>
+                        <tr class="frame-11-content-row">
                             <?php
-                                $isOwner = $tampil['userId'] == $username = $_SESSION['username']; // Check if the current user is the owner of this data
+                            $isOwner = $tampil['userId'] == $username = $_SESSION['username']; // Check if the current user is the owner of this data
                             ?>
-                            <td><?= $no++ ?></td>
-                            <td><?= $tampil['id'] ?></td>
-                            <td><?= $tampil['nama'] ?></td>
-                            <td><?= $tampil['jenis'] ?></td>
-                            <td><?= $tampil['deskripsi'] ?></td>
-                            <td><a href="downloadfile.php?peng=<?= $tampil['data']; ?>"><?php echo $tampil['data']; ?></a></td>                            
-                            <!-- <td><?= $tampil['data'] ?></td> -->
+                            <td class="frame-16">
+                                <div class="text-wrapper-6"><?= $no++ ?></div>
+                            </td>
+                            <td class="frame-17">
+                                <div class="text-wrapper-7"><?= $tampil['id'] ?></div>
+                            </td>
+                            <td class="frame-18">
+                                <div class="text-wrapper-7"><?= $tampil['nama'] ?></div>
+                            </td>
+                            <td class="frame-18">
+                                <div class="text-wrapper-7"><?= $tampil['jenis'] ?></div>
+                            </td>
+                            <td class="frame-19">
+                                <?= $tampil['deskripsi'] ?>
+                            </td>
+                            <td class="frame-18">
+                                <div class="text-wrapper-10"><a href="downloadfile.php?peng=<?= $tampil['data']; ?>"><?php echo $tampil['data']; ?></a></div>
+                            </td>
                             <?php if ($_SESSION['level'] == "warga" || $_SESSION['level'] == "petugas") { ?>
-                                <td class="text-center">
-                                    <!-- Only display edit button if the user is the owner -->
-                                    <?php if ($isOwner) { ?>
-                                        <a href="pengaduan.php?hal=edit&id=<?= $tampil['id'] ?>" class="btn btn-warning"><i class="fa-solid fa-pen-to-square"></i></a>
+                                <td class="frame-20"><?php if ($isOwner) { ?>
+                                        <!-- Only display edit button if the user is the owner -->
+                                        <a href="pengaduan.php?hal=edit&id=<?= $tampil['id'] ?>">
+                                            <img class="img" src="../img/edit.png" /></a>
                                     <?php } ?>
                                     <!-- Display delete button for all -->
-                                    <a href="pengaduan.php?hal=hapus&id=<?= $tampil['id'] ?>" onclick="return confirm('Apakah yakin ingin menghapus data ini?')" class="btn btn-danger"><i class="fa-solid fa-trash"></i></a>
+                                    <a href="pengaduan.php?hal=hapus&id=<?= $tampil['id'] ?>" onclick="return confirm('Apakah yakin ingin menghapus data ini?')">
+                                        <img class="img" src="../img/trash.png" /></a>
                                 </td>
                             <?php } ?>
                         </tr>
                     <?php endwhile; ?>
+
                 </table>
             </div>
-            <!-- </div> -->
         </div>
-        <!-- </div> -->
+        <!-- footer -->
+        <footer class="footer">
+            <div class="frame-21">
+                <div class="logo-2">
+                    <img class="group" src="../img/group-1-3.png" />
+                    <div class="text">
+                        <div class="g">
+                            <div class="text-5">Sosial</div>
+                        </div>
+                        <div class="div-wrapper">
+                            <div class="div">Net</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="frame-22">
+                    <div class="menu-2">
+                        <div class="heading-3">Fitur</div>
+                        <div class="div-2">
+                            <div class="item-2">Home</div>
+                            <div class="item-3">Layanan</div>
+                            <div class="item-3">Kepengurusan</div>
+                            <div class="item-3">Tentang</div>
+                            <div class="item-3">Artikel</div>
+                            <div class="item-3">Feedback</div>
+                        </div>
+                    </div>
+                    <div class="menu-2">
+                        <div class="heading-3">Jenis Layanan</div>
+                        <div class="div-2">
+                            <div class="item-2">Laporkan Pengaduan</div>
+                            <div class="item-3">Pengajuan Administrasi</div>
+                            <div class="item-3">Permintaan Layanan</div>
+                            <div class="item-3">Informasi Umum</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="link-wrapper">
+                <div class="link">
+                    <img class="ic-baseline" src="../img/ic-baseline-copyright.svg" />
+                    <p class="item-4">2024. All right reserved by: Della Fitria Lestari, Ninda, Irvianti Dwityara Sany
+                    </p>
+                </div>
+            </div>
+        </footer>
     </div>
-    <br><br><br>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
 </body>
 
 </html>
