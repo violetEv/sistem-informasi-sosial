@@ -621,15 +621,15 @@
 }
 
 .layanan-administrasi .heading-2 {
-    color: var(--black);
-    position: relative;
     align-self: stretch;
+    font-weight: var(--heading-2-semibold-font-weight);
+    color: var(--black);
+    font-size: var(--heading-2-semibold-font-size-2);
+    line-height: var(--heading-2-semibold-line-height);
+    position: relative;
     margin-top: -1px;
     font-family: var(--heading-2-semibold-font-family);
-    font-weight: var(--heading-2-semibold-font-weight);
-    font-size: var(--heading-2-semibold-font-size);
     letter-spacing: var(--heading-2-semibold-letter-spacing);
-    line-height: var(--heading-2-semibold-line-height);
     font-style: var(--heading-2-semibold-font-style);
 }
 
@@ -1021,6 +1021,19 @@
     left: 0;
     border-radius: 5px;
 }
+.layanan-administrasi .dropdown-icon {
+    position: absolute;
+    top: 50%;
+    right: 12px;
+    transform: translateY(-50%);
+    pointer-events: none;
+    width: 24px;
+    height: 24px;
+    background-image: url('img/vuesax-outline-arrow-down-3.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    color: transparent;
+  }
 
 /* --- */
 .layanan-administrasi .frame {

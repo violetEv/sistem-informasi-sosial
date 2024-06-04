@@ -192,19 +192,20 @@ if (isset($_GET['hal'])) {
                         <div class="frame-4">
                             <div class="text-wrapper-3">ID pengaduan</div>
                             <div class="field-form-isi">
-                                <input type="text" class="form-input" placeholder="Otomatis oleh sistem" name="id" value="<?=$data['id'] ?>" disabled>
+                                <input type="text" class="form-input" placeholder="Otomatis oleh sistem" name="id" value="<?= $data['id'] ?>" disabled>
                             </div>
                         </div>
                         <div class="frame-4">
                             <div class="text-wrapper-3">Nama Lengkap</div>
                             <div class="field-form-isi">
-                                <input type="text" class="form-input" placeholder="Otomatis oleh sistem" name="username" value="<?=$tampil['nama'] ?>" disabled>
+                                <input type="text" class="form-input" placeholder="Otomatis oleh sistem" name="username" value="<?= $tampil['nama'] ?>" disabled>
                             </div>
                         </div>
                         <div class="frame-4">
                             <div class="text-wrapper-3">Jenis pengaduan</div>
                             <div class="field-form-dropdown">
                                 <select class="form-dropdown" id="jenis" name="jenis" required>
+                                    <option value="" disabled selected>Jenis Pengaduan</option>
                                     <?php
                                     include "../koneksi.php";
                                     $a = "SELECT * FROM layanan WHERE jenis = 'Pengaduan'";
@@ -215,6 +216,7 @@ if (isset($_GET['hal'])) {
                                         </option>
                                     <?php } ?>
                                 </select>
+                                <span class="dropdown-icon"></span>
                             </div>
                         </div>
                         <div class="frame-4">
@@ -244,7 +246,7 @@ if (isset($_GET['hal'])) {
 
                     </div>
                     <div class="frame-8">
-                        <button type="submit" class="button" onclick="return validateForm()">
+                        <button type="submit" name="simpan" class="button" onclick="return validateForm()">
                             <div class="text-3">Tambahkan</div>
                         </button>
                         <button class="button-2" type="reset" id="resetButton">
@@ -314,7 +316,7 @@ if (isset($_GET['hal'])) {
                                 <div class="text-wrapper-7"><?= $tampil['jenis'] ?></div>
                             </td>
                             <td class="frame-19">
-                                <?= $tampil['deskripsi'] ?>
+                                <div class="text-wrapper-7"><?= $tampil['deskripsi'] ?></div>
                             </td>
                             <td class="frame-18">
                                 <div class="text-wrapper-10"><a href="downloadfile.php?peng=<?= $tampil['data']; ?>"><?php echo $tampil['data']; ?></a></div>
@@ -382,6 +384,18 @@ if (isset($_GET['hal'])) {
             </div>
         </footer>
     </div>
+    <script>
+        document.getElementById('data').addEventListener('change', function() {
+            var fileInput = document.getElementById('data');
+            var fileChosen = document.getElementById('file-chosen');
+
+            if (fileInput.files.length > 0) {
+                fileChosen.textContent = fileInput.files[0].name;
+            } else {
+                fileChosen.textContent = 'No file chosen';
+            }
+        });
+    </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 
 </body>

@@ -219,6 +219,7 @@ if (isset($_GET['hal'])) {
                                         </option>
                                     <?php } ?>
                                 </select>
+                                <span class="dropdown-icon"></span>
                             </div>
                         </div>
                         <div class="frame-4">
