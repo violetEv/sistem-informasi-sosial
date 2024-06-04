@@ -24,37 +24,37 @@
                             <div class="input">
                                 <div class="field">
                                     <img class="img-2" src="img/user.svg" />
-                                    <input class="smithy-weber-4" placeholder="Username" type="text" />
+                                    <input class="smithy-weber-4" name="username" placeholder="Username" type="text" />
                                 </div>
                             </div>
                             <div class="input">
                                 <div class="field">
-                                    <img class="img-2" src="img/lock.svg" />
-                                    <input type="password" class="smithy-weber-4" placeholder="Password" />
+                                    <img class="img-2" src="img/padlock.svg" />
+                                    <input type="password" name="psw" class="smithy-weber-4" placeholder="Password" />
                                 </div>
                             </div>
                             <div class="input">
                                 <div class="field">
                                     <img class="img-2" src="img/user-edit.svg" />
-                                    <input type="text" class="smithy-weber-4" placeholder="Nama sesuai KTP/KK" />
+                                    <input type="text" name="nama" class="smithy-weber-4" placeholder="Nama sesuai KTP/KK" />
                                 </div>
                             </div>
                             <div class="input">
                                 <div class="field">
                                     <img class="img-2" src="img/mail.svg" />
-                                    <input class="smithy-weber-4" placeholder="Masukkan email user@gmail.com" type="email" />
+                                    <input class="smithy-weber-4" name="email" placeholder="Masukkan email user@gmail.com" type="email" />
                                 </div>
                             </div>
                             <div class="input">
                                 <div class="field">
                                     <img class="img-2" src="img/route.svg" />
-                                    <input type="text" class="smithy-weber-4" placeholder="Alamat sesuai KTP/KK" />
+                                    <input type="text" name="alamat" class="smithy-weber-4" placeholder="Alamat sesuai KTP/KK" />
                                 </div>
                             </div>
                             <div class="input">
                                 <div class="field">
                                     <img class="img-2" src="img/call.svg" />
-                                    <input type="text" class="smithy-weber-4" placeholder="Nomor telepon" />
+                                    <input type="text" name="tlp" class="smithy-weber-4" placeholder="Nomor telepon" />
                                 </div>
                             </div>
                             <!-- selection -->
