@@ -138,7 +138,7 @@ if (!isset($_SESSION['username'])) {
               <div class="heading-3">Cek Hasil Layanan</div>
               <p class="p">Lihat hasil layanan Anda yang telah direspon petugas.</p>
             </div>
-            <button class="button"><a href="#" class="text-4">Tambah</a></button>
+            <button class="button"><a href="petugas/hasil_pengaduan.php" class="text-4">Tambah</a></button>
           </div>
         </div>
       </div>
