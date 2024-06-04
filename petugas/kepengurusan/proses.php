@@ -6,10 +6,10 @@ $nama = $_POST['nama'];
 $nip = $_POST['nip'];
 $jabatan = $_POST['jabatan'];
 $file_name = $_FILES['foto']['name'];
-$direktori = "kepengurusan/";
+$direktori = "../../uploads-gambar/";
 
 if (!empty($kode) && !empty($nama) && !empty($nip) && !empty($jabatan) && !empty($file_name)) {
-    $ekstensi_boleh = array('png', 'jpg');
+    $ekstensi_boleh = array('png', 'jpg', 'jpeg');
     $x = explode('.', $file_name);
     $ekstensi = strtolower(end($x));
     $file_tmp = $_FILES['foto']['tmp_name'];

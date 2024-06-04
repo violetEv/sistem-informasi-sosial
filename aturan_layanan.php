@@ -1,24 +1,25 @@
 <?php
-include "koneksi.php";
 session_start();
-
+include "koneksi.php";
+error_reporting(E_ALL ^ (E_NOTICE | E_WARNING));
 if (!isset($_SESSION['username'])) {
-  header("Location: index.php");
-  exit;
+  die("Anda belum login, klik <a href=\"index.php\">disini</a> untuk login");
+} else {
+  $username = $_SESSION['username'];
 }
 
-$kode = isset($_GET['id']) ? $_GET['id'] : null;
-$nama = isset($_SESSION['nama']) ? $_SESSION['nama'] : null;
-$jenis = isset($_POST['jenis']) ? $_POST['jenis'] : null;
-$deskripsi = isset($_POST['deskripsi']) ? $_POST['deskripsi'] : null;
-$file_name = isset($_FILES['data']['name']) ? $_FILES['data']['name'] : null;
-$file_tmp = isset($_FILES['data']['tmp_name']) ? $_FILES['data']['tmp_name'] : null;
-$direktori = "template/";
+$kode = $_GET['id'];
+$nama = $_SESSION['nama'];
+$jenis = $_POST['jenis'];
+$deskripsi = $_POST['deskripsi'];
+$file_name = $_FILES['data']['name'];
+$file_tmp = $_FILES['data']['tmp_name'];
+$direktori = "../template/";
 $linkberkas = $direktori . $file_name;
 
 if (isset($_POST['simpan'])) {
-  if (!empty($jenis) && !empty($deskripsi) && !empty($file_name)) {
-    if (isset($_GET['hal']) && $_GET['hal'] == "edit") {
+  if (empty($jenis && $deskripsi && $file_name) != true) {
+    if ($_GET['hal'] == "edit") {
       $query = "UPDATE aturan_layanan SET
            id_layanan = '$jenis',
            aturan = '$deskripsi',
@@ -66,7 +67,7 @@ if (isset($_POST['simpan'])) {
 // tombol edit tabel
 if (isset($_GET['hal'])) {
   if ($_GET['hal'] == "edit") {
-    $b = mysqli_query($koneksi, "SELECT * FROM aturan_layanan WHERE id='$kode'");
+    $b = mysqli_query($koneksi, "SELECT * FROM aturan_layanan WHERE id='$_GET[id]'");
     $data = mysqli_fetch_array($b);
     if ($data) {
       $vjenis = $data['id_layanan'];
@@ -74,7 +75,7 @@ if (isset($_GET['hal'])) {
       $vdata = $data['template_data'];
     }
   } elseif ($_GET['hal'] == "hapus") {
-    $hapus = mysqli_query($koneksi, "DELETE FROM aturan_layanan WHERE id='$kode'");
+    $hapus = mysqli_query($koneksi, "DELETE FROM aturan_layanan WHERE  id='$_GET[id]'");
     if ($hapus) {
       echo "<script>
               alert('Hapus Data Sukses!');
@@ -83,6 +84,8 @@ if (isset($_GET['hal'])) {
     }
   }
 }
+
+
 
 ?>
 
@@ -136,8 +139,8 @@ if (isset($_GET['hal'])) {
         <li class="item">
           <a href="<?php echo ($_SESSION['level'] == 'petugas') ? 'artikel-admin.php' : 'artikel-user.php'; ?>" class="label">Informasi</a>
         </li>
-        <li class="item"><a class="label" href="petugas/kepengurusan/kepengurusan.php">Kepengurusan</a></li>
-        <li class="item"><a class="label" href="#tentang">Tentang</a></li>
+        <li class="item"><a class="label" href="kepengurusan.php">Kepengurusan</a></li>
+        <li class="item"><a class="label" href="home.php#tentang">Tentang</a></li>
         <li class="item"><a class="label" href="fitur_feedback.php">Feedback</a></li>
       </div>
       <div class="frame">
@@ -175,11 +178,11 @@ if (isset($_GET['hal'])) {
                 <div class="field-form-dropdown">
                   <select class="form-dropdown" name="jenis" value="<?= $vjenis ?>" required>
                     <?php
-                    include "../koneksi.php";
+                    include "koneksi.php";
                     $a = "SELECT * FROM layanan";
                     $b = mysqli_query($koneksi, $a);
                     while ($c = $b->fetch_array()) { ?>
-                      <option value="<?php echo $c['id']; ?>"> <?php echo $c['spesifikasi']; ?></option>
+                      <option value="<?php echo $c['id']; ?>" <?php if (isset($vjenis) && $vjenis == $c['id']) echo 'selected'; ?>> <?php echo $c['spesifikasi']; ?></option>
                     <?php } ?>
                   </select>
                   <span class="dropdown-icon"></span>
@@ -188,30 +191,35 @@ if (isset($_GET['hal'])) {
               <div class="frame-4">
                 <div class="text-wrapper-3">Aturan dasar</div>
                 <div class="field-form-isi">
-                  <textarea type="text" class="form-input" style="resize: vertical; width: 100%; max-width: 100%; min-width: 100%; min-height: 180px;" value="<?= @$vdesk ?>" placeholder="Masukkan deskripsi minimal 200 kata" <?= @$vdesk ?> name="deskripsi" required></textarea>
+                  <textarea class="form-input" style="resize: vertical; width: 100%; max-width: 100%; min-width: 100%; min-height: 180px;" value="<?= @$vdesk ?>" placeholder="Masukkan deskripsi minimal 200 kata" name="deskripsi" required><?= $vdesk ?></textarea>
                 </div>
               </div>
               <div class="frame-4">
-                <div class="text-wrapper-3">Data pendukung</div>
+                <div class="text-wrapper-3">Data pendukung
+                  <br>
+                  <?php
+                  if ($_GET['hal'] == "edit") { ?>
+                    <label style="font-size: 12px;" class="text-danger"> (Upload File terbaru untuk diperbarui)</label>
+                  <?php } ?>
+                </div>
                 <div class="field-up">
                   <div class="smithy-weber-wrapper">
-                    <label for="datar" class="file-label">Choose file</label>
-                    <input type="file" class="file-input" name="data" value="<?= @$vdata ?>" id="formFileMultiple" accept="" required>
+                    <label for="data" class="file-label">Choose file</label>
+                    <input type="file" class="file-input" name="data" id="data" value="<?= @$vdata ?>" accept="" required>
                   </div>
                   <div class="frame-6">
-                    <div class="smithy-weber" ">No file chosen</div>
+                    <div class="smithy-weber" id="file-chosen">No file chosen</div>
                   </div>
                 </div>
               </div>
-
               <div class=" frame-7">
-                      <button type="submit" class="button" onclick="return validateForm()">
-                        <div class="text-3">Simpan</div>
-                      </button>
-                      <button class="button-2" type="button" id="resetButton"><span class="text-4">Reset</span></button>
-                    </div>
-                  </div>
-                </div>
+                <button type="submit" name="simpan" class="button">
+                  <div class="text-3">Simpan</div>
+                </button>
+                <button class="button-2" name="reset" type="reset" id="resetButton"><span class="text-4">Reset</span></button>
+              </div>
+            </div>
+          </div>
         </form>
         <br>
         <div class="heading-2">Daftar Persyaratan & Aturan</div>
@@ -239,7 +247,7 @@ if (isset($_GET['hal'])) {
                 <td class="text-wrapper-2"><?= $tampil['jenis'] ?></td>
                 <td class="text-wrapper-2"><?= $tampil['spesifikasi'] ?></td>
                 <td class="text-wrapper-2" style="text-align: justify; white-space: pre-wrap;"><?= nl2br($tampil['aturan'])  ?></td>
-                <td class="text-wrapper-2"><a href="downloadfile.php?url=<?= $tampil['template_data']; ?>"><?php echo $tampil['template_data']; ?></a></td>
+                <td class="text-wrapper-2"><a href="petugas/downloadfile.php?url=<?= $tampil['template_data']; ?>"><?php echo $tampil['template_data']; ?></a></td>
                 <!-- <td><?= $tampil['template_data'] ?></td> -->
                 <?php if ($_SESSION['level'] == 'petugas') { ?>
                   <td class="text-wrapper-2" style="text-align: center;">
@@ -308,6 +316,16 @@ if (isset($_GET['hal'])) {
     </footer>
 
   </div>
+  <script>
+    document.getElementById('data').addEventListener('change', function(event) {
+      const input = event.target;
+      const fileName = input.files.length > 0 ? input.files[0].name : 'No file chosen';
+      const fileChosenElement = document.getElementById('file-chosen');
+      fileChosenElement.textContent = fileName;
+      fileChosenElement.classList.add('form-input2');
+    });
+  </script>
+
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 </body>
 

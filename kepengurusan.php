@@ -1,9 +1,9 @@
 <?php
-include "../../koneksi.php";
+include "koneksi.php";
 session_start();
 error_reporting(E_ALL ^ (E_NOTICE | E_WARNING));
 if (!isset($_SESSION['username'])) {
-  die("Anda belum login, klik <a href=\"../../index.php\">disini</a> untuk login");
+  die("Anda belum login, klik <a href=\"index.php\">disini</a> untuk login");
 } else {
   $username = $_SESSION['username'];
   $nama = $_SESSION['nama'];
@@ -15,7 +15,7 @@ $nama = $_POST['nama'];
 $nip = $_POST['nip'];
 $jabatan = $_POST['jabatan'];
 $file_name = $_FILES['foto']['name'];
-$direktori = "../../uploads-gambar/";
+$direktori = "uploads-gambar/";
 
 
 // Proses penambahan data pengurus ke dalam database
@@ -70,8 +70,8 @@ if (isset($_GET['hal']) && $_SESSION['level'] == 'petugas') {
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Kepengurusan</title>
-  <link rel="stylesheet" href="../../globals.css" />
-  <link rel="stylesheet" href="../../styleguide.css" />
+  <link rel="stylesheet" href="globals.css" />
+  <link rel="stylesheet" href="styleguide.css" />
   <link rel="stylesheet" href="style-kepengurusan.css" />
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
@@ -82,7 +82,7 @@ if (isset($_GET['hal']) && $_SESSION['level'] == 'petugas') {
   <div class="kepengurusan">
     <nav class="navigation">
       <div class="logo">
-        <img class="group" src="../../img/group-1-2.png" />
+        <img class="group" src="img/group-1-2.png" />
         <div class="text">
           <div class="g">
             <div class="text-wrapper">Sosial</div>
@@ -93,12 +93,12 @@ if (isset($_GET['hal']) && $_SESSION['level'] == 'petugas') {
         </div>
       </div>
       <div class="menu">
-        <li class="item"><a class="label-2" href="../../home.php">Home</a></li>
+        <li class="item"><a class="label-2" href="home.php">Home</a></li>
         <li class="item layanan">
           <a class="label" href="#">Layanan</a>
           <ul class="dropdown-menu">
             <li>
-              <a class="label" href="../../aturan_layanan.php">
+              <a class="label" href="aturan_layanan.php">
                 <?php if ($_SESSION['level'] == 'petugas') { ?>
                   Input Aturan Layanan
                 <?php } else { ?>
@@ -106,14 +106,14 @@ if (isset($_GET['hal']) && $_SESSION['level'] == 'petugas') {
                 <?php } ?>
               </a>
             </li>
-            <li><a class="label" href="../../spesifikasi_layanan.php">Spesifikasi Layanan</a></li>
+            <li><a class="label" href="spesifikasi_layanan.php">Spesifikasi Layanan</a></li>
           </ul>
         </li>
 
-        <li class="item"><a href="<?php echo ($_SESSION['level'] == 'petugas') ? '../../artikel-admin.php' : '../../artikel-user.php'; ?>" class="label">Informasi</a></li>
-        <li class="item"><a class="label" href="../../petugas/kepengurusan/kepengurusan.php">Kepengurusan</a></li>
-        <li class="item"><a class="label" href="#tentang">Tentang</a></li>
-        <li class="item"><a class="label" href="../../fitur_feedback.php">Feedback</a></li>
+        <li class="item"><a href="<?php echo ($_SESSION['level'] == 'petugas') ? 'artikel-admin.php' : 'artikel-user.php'; ?>" class="label">Informasi</a></li>
+        <li class="item"><a class="label" href="kepengurusan.php">Kepengurusan</a></li>
+        <li class="item"><a class="label" href="home.php#tentang">Tentang</a></li>
+        <li class="item"><a class="label" href="fitur_feedback.php">Feedback</a></li>
       </div>
       <div class="frame">
         <div class="button" id="dropdownButton">
@@ -121,16 +121,16 @@ if (isset($_GET['hal']) && $_SESSION['level'] == 'petugas') {
             <?php $username = $_SESSION['username'];
             echo "$username"; ?>
           </div>
-          <img class="vuesax-outline-arrow" src="../../img/vuesax-outline-arrow-down-2.svg" />
+          <img class="vuesax-outline-arrow" src="img/vuesax-outline-arrow-down-2.svg" />
         </div>
         <ul class="dropdown-menu-log" id="dropdownMenu">
-          <li><a href="../../logout.php" class="label">Logout</a></li>
+          <li><a href="logout.php" class="label">Logout</a></li>
         </ul>
       </div>
     </nav>
 
     <div class="frame-2-1">
-      <div class="BG-wrapper"><img class="BG" src="../../img/bg.png" /></div>
+      <div class="BG-wrapper"><img class="BG" src="img/bg.png" /></div>
       <div class="paragraph-container">
         <p class="heading">Staff Pelayanan <br />Masyarakat</p>
         <p class="description">Bertanggung jawab dalam mengoperasikan dan memfasilitasi sistem untuk memberikan layanan yang cepat dan efisien kepada masyarakat.</p>
@@ -181,7 +181,7 @@ if (isset($_GET['hal']) && $_SESSION['level'] == 'petugas') {
                 <button type="submit" name="simpan" class="button">
                   <div class="text-3">Simpan</div>
                 </button>
-                <button class="button-2" type="button" id="resetButton"><span class="text-4">Reset</span></button>
+                <button class="button-2" type="reset" name="reset" id="resetButton"><span class="text-4">Reset</span></button>
               </div>
             </div>
           </div>
@@ -218,14 +218,14 @@ if (isset($_GET['hal']) && $_SESSION['level'] == 'petugas') {
                   <td class="text-wrapper-2"><?= $no++ ?></td>
                   <td class="text-wrapper-2"><?= $tampil['id'] ?></td>
                   <td class="text-wrapper-2"><?= $tampil['nip'] ?></td>
-                  <td class="text-wrapper-2"><img src="../../uploads-gambar/<?= $tampil['foto'] ?>" width="100" height="100"></td>
+                  <td class="text-wrapper-2"><img src="uploads-gambar/<?= $tampil['foto'] ?>" width="100" height="100"></td>
                   <td class="text-wrapper-2"><?= $tampil['nama'] ?></td>
                   <td class="text-wrapper-2"><?= $tampil['jabatan'] ?></td>
                   <?php if ($_SESSION['level'] == "petugas") { ?>
                     <td class="text-wrapper-2" style="text-align: center;">
                       <a href="kepengurusan.php?hal=hapus&id=<?= $tampil['id'] ?>" onclick="return confirm('Apakah yakin ingin menghapus data ini?')">
                         <button type="submit" class="button-trash">
-                          <img class="icon" src="../../img/trash.png" />
+                          <img class="icon" src="img/trash.png" />
                         </button></a>
                     </td>
                   <?php } ?>
@@ -247,7 +247,7 @@ if (isset($_GET['hal']) && $_SESSION['level'] == 'petugas') {
               while ($row = $result->fetch_assoc()) {
                 echo ' <div class="frame-11"> 
                 <div class="frame-10">
-                <img class="mask-group" src="../../uploads-gambar/' . $row['foto'] . '" />
+                <img class="mask-group" src="uploads-gambar/' . $row['foto'] . '" />
       <div class="frame-12">
         <div class="div-3">
           <div class="frame-13">
@@ -273,7 +273,7 @@ if (isset($_GET['hal']) && $_SESSION['level'] == 'petugas') {
     <footer class="footer">
       <div class="frame-16">
         <div class="logo-2">
-          <img class="group" src="../../img/group-1-3.png" />
+          <img class="group" src="img/group-1-3.png" />
           <div class="text">
             <div class="g">
               <div class="text-7">Sosial</div>
@@ -308,7 +308,7 @@ if (isset($_GET['hal']) && $_SESSION['level'] == 'petugas') {
       </div>
       <div class="link-wrapper">
         <div class="link">
-          <img class="ic-baseline" src="../../img/ic-baseline-copyright.svg" />
+          <img class="ic-baseline" src="img/ic-baseline-copyright.svg" />
           <p class="item-4">2024. All right reserved by: Della Fitria Lestari, Ninda, Irvianti Dwityara Sany</p>
         </div>
       </div>

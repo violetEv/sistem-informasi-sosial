@@ -677,6 +677,17 @@
   height: auto;
 }
 
+.artikel .form-input2{
+  border: none;
+  outline: none;
+  border-radius: 8px;
+  font-family: var(--body-regular-font-family);
+  font-weight: 500;
+  color: var(--black);
+  font-size: 20px;
+  letter-spacing: 0;
+}
+
 .aturan-layanan .file-label::after {
   content: attr(data-text);
 }

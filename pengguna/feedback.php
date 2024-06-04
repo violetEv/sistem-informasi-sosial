@@ -17,7 +17,7 @@ $query_feedback = "SELECT * FROM feedback";
 $result_feedback = $koneksi->query($query_feedback);
 
 // Fungsi untuk menghapus feedback
-if(isset($_GET['hapus'])){
+if (isset($_GET['hapus'])) {
     $id_feedback = $_GET['hapus'];
     $sql_delete = "DELETE FROM feedback WHERE id='$id_feedback'";
     $koneksi->query($sql_delete);
@@ -178,7 +178,7 @@ if (isset($_POST['simpan'])) {
                             <button type="reset" name="reset" class="btn btn-danger">RESET</button>
                         </div>
                     </form>
-                    
+
                     <!-- Tampilkan daftar feedback -->
                     <?php if ($_SESSION['level'] == 'petugas' || $_SESSION['level'] == 'warga') { ?>
                         <h2 class="mt-5">Daftar Feedback:</h2>

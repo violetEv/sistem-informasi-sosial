@@ -55,7 +55,7 @@ if (!isset($_SESSION['username'])) {
         <li class="item">
           <a href="<?php echo ($_SESSION['level'] == 'petugas') ? 'artikel-admin.php' : 'artikel-user.php'; ?>" class="label">Informasi</a>
         </li>
-        <li class="item"><a class="label" href="petugas/kepengurusan/kepengurusan.php">Kepengurusan</a></li>
+        <li class="item"><a class="label" href="kepengurusan.php">Kepengurusan</a></li>
         <li class="item"><a class="label" href="#tentang">Tentang</a></li>
         <li class="item"><a class="label" href="fitur_feedback.php">Feedback</a></li>
       </div>
@@ -138,7 +138,7 @@ if (!isset($_SESSION['username'])) {
               <div class="heading-3">Cek Hasil Layanan</div>
               <p class="p">Lihat hasil layanan Anda yang telah direspon petugas.</p>
             </div>
-            <button class="button"><a href="#" class="text-4">Tambah</a></button>
+            <button class="button"><a href="petugas/hasil_pengaduan.php" class="text-4">Tambah</a></button>
           </div>
         </div>
       </div>
