@@ -184,7 +184,7 @@ if (isset($_GET['hal'])) {
                             <span class="span">Sebelum Mengisi Pengaduan, lihat persyaratan yang diinginkan terlebih dahulu
                                 pada
                             </span>
-                            <span class="text-wrapper-2">aturan layanan</span>
+                            <a href="../aturan_layanan.php" class="text-wrapper-2">aturan layanan</a>
                         </p>
                     </div>
 
