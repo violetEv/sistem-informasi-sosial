@@ -47,7 +47,6 @@
 							<?php include 'register.php'; ?> </div>
 					</div>
 				</div>
-				<!-- </div> -->
 			</div>
 		</div>
 	</div>

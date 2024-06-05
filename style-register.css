@@ -344,6 +344,8 @@
 }
 
 .sign-up .frame-8 {
+  all: unset;
+  box-sizing: border-box;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -355,6 +357,14 @@
   flex: 0 0 auto;
   background-color: var(--blue-1);
   border-radius: 8px;
+  box-shadow: var(--shadow-xs);
+  border-color: var(--blue-1);
+  cursor: pointer; /* Added cursor pointer */
+  transition: background-color 0.3s ease;
+}
+
+.sign-up .frame-8:hover {
+  background-color: var(--black);
 }
 
 .sign-up .smithy-weber-6 {
@@ -453,6 +463,7 @@
 #pDetails {
   display: none;
 }
+
 #pDetails.show {
   display: block;
 }
