@@ -27,8 +27,6 @@ if (isset($_POST['simpan'])) {
         if (in_array($ekstensi, $ekstensi_boleh) === true) {
             if ($_GET['hal'] == "edit") {
                 $query = "UPDATE pengaduan SET
-            --  username = '$_POST[username]',
-            --  nama = '$_POST[nama]',
              jenis = '$_POST[jenis]',
              deskripsi = '$_POST[deskripsi]',
              `data` = '$file_name',
@@ -38,17 +36,11 @@ if (isset($_POST['simpan'])) {
 
                 if ($edit) {
                     move_uploaded_file($_FILES['data']['tmp_name'], $direktori . $file_name);
-                    // $sukses = "Berhasil Menyimpan Data";
                     echo "<script>alert('Berhasil Memperbarui Pengaduan!');</script>";
-                    // exit();
                     header("refresh:2;url=pengaduan.php");
-                    // header("Location: pengaduan.php", true, 301);
-                    // echo "<script>location.replace('pengaduan.php');</script>";
                 } else {
                     echo "<script>alert('Edit Data Gagal!');</script>";
-                    // $error = "Gagal Menyimpan Data";
                     header("refresh:2;url=pengaduan.php");
-                    // echo "<script>location.replace('pengaduan.php');</script>";
                 }
             } else {
 
@@ -57,13 +49,11 @@ if (isset($_POST['simpan'])) {
                 $a = $koneksi->query($sql);
                 if ($a === true) {
                     move_uploaded_file($_FILES['data']['tmp_name'], $direktori . $file_name);
-                    // $sukses = "Berhasil Menyimpan Data";
                     echo "<script>alert('Berhasil Mengirim Pengaduan!');</script>";
                     header("refresh:2;url=pengaduan.php");
                 } else {
                     echo "<script>alert('Gagal Mengirim Pengaduan!');</script>";
                     echo "<script>history.back();</script>";
-                    // header("refresh:2;url=pengaduan.php");
                 }
             }
         } else {
@@ -75,7 +65,6 @@ if (isset($_POST['simpan'])) {
         echo "<script>location.replace('pengaduan.php?status=gagal');</script>";
     }
 } else {
-    //  echo "<script>alert('Gagal Mengirim Pengaduan!');</script>";
     echo "<script>location('pengaduan.php');</script>";
 }
 
@@ -204,7 +193,7 @@ if (isset($_GET['hal'])) {
                         <div class="frame-4">
                             <div class="text-wrapper-3">Jenis pengaduan</div>
                             <div class="field-form-dropdown">
-                                <select class="form-dropdown" id="jenis" name="jenis" required>
+                                <select class="form-dropdown" value="<?= $vjenis ?>" id="jenis" name="jenis" required>
                                     <option value="" disabled selected>Jenis Pengaduan</option>
                                     <?php
                                     include "../koneksi.php";
@@ -301,7 +290,7 @@ if (isset($_GET['hal'])) {
                     while ($tampil = mysqli_fetch_array($a)) : ?>
                         <tr class="frame-11-content-row">
                             <?php
-                            $isOwner = $tampil['userId'] == $username = $_SESSION['username']; // Check if the current user is the owner of this data
+                            $isOwner = $tampil['userId'] == $username = $_SESSION['username'];
                             ?>
                             <td class="frame-16">
                                 <div class="text-wrapper-6"><?= $no++ ?></div>
